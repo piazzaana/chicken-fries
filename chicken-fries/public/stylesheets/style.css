@@ -1,0 +1,38 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+body {
+  padding: 50px;
+  font: 16px "Comic Sans MS", Helvetica, Arial, sans-serif;
+}
+.navbar{
+  background-color: #B91D3A;
+}
+.si-glyph-magnifier{
+  height: 30px;
+  width: auto;
+}
+.navbar-toggler-icon{
+  height: 30px;
+  width: auto;
+}
+main{
+  margin-top: 50px;
+}
+footer{
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  line-height: 50px;
+  text-align: center;
+  background-color: #B91D3A;
+}
+a {
+  color: #00B7FF;
+}
+.navbar-brand{
+  text-align: center;
+}
