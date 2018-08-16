@@ -6,4 +6,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Welcome to Chicken & Fries' });
 });
 
+//get order page
+router.get('/order', function (req, res, next) {
+    res.render('order');
+});
+
+// get about page
+router.get('/about', function (req, res, next) {
+    res.render('about');
+});
+
+//get contact page
+router.get('/contact', function (req, res, next) {
+    res.render('contact');
+});
+
+//get location page
+router.get('/location', function (req, res, next) {
+    res.render('location');
+});
+
 module.exports = router;
