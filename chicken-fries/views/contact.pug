@@ -1,10 +1,46 @@
 extends layout
 
 block content
-<<<<<<< HEAD
-    h1 Contact Us page
+    style(type='text/css').
+        form{
+            font-family: 'Verdana', sans-serif;
+        }
+        div.form-group{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        label, input, button {
+            display: block;
+        }
+        label{
+            margin-bottom: 0;
+        }
+        textarea{
+            margin-bottom: 10px;
+        }
+        button{
+            background-color: #B91D3A;
+            border-radius: 10px;
+            height: 50px;
+            width: 150px;
+        }
+
+    form.contact(method='POST' action='')
+        h1=title
+        div.form-group
+            label Name
+            input.form-control(type='text' placeholder='Your name')
+        div.form-group
+            label Email
+            input.form-control(type='email' placeholder='youremail@provider.com')
+        div.form-group
+            label Message
+            textarea.form-control(placeholder='your message')
+
+            button
+                a(href='#') Send Message
+
 
     a(href='/') back to home page
-=======
-    h1=title
->>>>>>> pull-request

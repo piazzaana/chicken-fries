@@ -6,7 +6,7 @@ block content
   h1= title
   h2 Crispy like no other!
 
-  form(method='POST' action='')
+  form.order-choice(method='POST' action='')
     div.form-group
         div.header
             h3 Place your order
@@ -15,8 +15,3 @@ block content
                 a(href='/create-pick-up-order') Pick Up
             button.delivery
                 a(href='/create-delivery-order') Delivery
-
-  if errors
-    ul
-        for errors in error
-            li!= error.msg
