@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85815483-8e9d-4c2e-b0ac-2d6bf10a4e4d" name="Default Changelist" comment="" />
+    <list default="true" id="85815483-8e9d-4c2e-b0ac-2d6bf10a4e4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/chicken-fries/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/node_modules/ci-info/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/node_modules/nodemon/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/node_modules/nodemon/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chicken-fries/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/chicken-fries/package-lock.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,7 +23,9 @@
     <session id="-1557298863">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -58,10 +68,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/chicken-fries/package.json" />
-    </packageJsonPaths>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="351" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -69,6 +80,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,8 +97,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -113,19 +127,19 @@
       <workItem from="1533692736993" duration="4453000" />
       <workItem from="1533926502394" duration="8000" />
       <workItem from="1534384030633" duration="313000" />
+      <workItem from="1534387269128" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21000" />
+    <option name="totallyTimeSpent" value="36000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19670959" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -137,11 +151,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32898173" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
