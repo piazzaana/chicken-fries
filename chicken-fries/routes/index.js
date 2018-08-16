@@ -26,4 +26,12 @@ router.get('/location', function (req, res, next) {
     res.render('location');
 });
 
+router.get('/create-pick-up-order', function (req, res, next) {
+    res.render('create-pick-up-order');
+});
+
+router.get('/create-delivery-order', function (req, res, next) {
+    res.render('create-delivery-order');
+});
+
 module.exports = router;

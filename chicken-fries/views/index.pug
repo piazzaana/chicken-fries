@@ -1,11 +1,22 @@
 extends layout
 
 block content
-  style(type='text/css').
-    body {
-      background-color: #B91D3A;
-      color: white;
-    }
+
   img(src='/images/logo.png' class='logo')
-  h2= title
-  h4 Crispy like no other!
+  h1= title
+  h2 Crispy like no other!
+
+  form(method='POST' action='')
+    div.form-group
+        div.header
+            h3 Place your order
+        div.btns
+            button.pick-up
+                a(href='/create-pick-up-order') Pick Up
+            button.delivery
+                a(href='/create-delivery-order') Delivery
+
+  if errors
+    ul
+        for errors in error
+            li!= error.msg
