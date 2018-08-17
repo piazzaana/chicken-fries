@@ -1,6 +1,17 @@
 extends layout
 
 block content
+    style(type='text/css').
+        div.redirect {
+            text-align: right;
+            margin: 50px;
+            font-size: 20px;
+        }
+
+        div.redirect a {
+            color: black;
+        }
+
     h1=title
 
     h2 Our Story
@@ -9,5 +20,6 @@ block content
     h2 Our Staff
     p place an image and short bio about staff
 
-    a(href='/') back to home page
+    div.redirect
+        a(href='/') back to home page
 

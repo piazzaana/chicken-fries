@@ -26,6 +26,15 @@ block content
             height: 50px;
             width: 150px;
         }
+        div.redirect {
+            text-align: right;
+            margin: 50px;
+            font-size: 20px;
+        }
+
+        div.redirect a {
+            color: black;
+        }
 
     form.contact(method='POST' action='')
         h1=title
@@ -42,5 +51,5 @@ block content
             button
                 a(href='#') Send Message
 
-
-    a(href='/') back to home page
+    div.redirect
+        a(href='/') back to home page
