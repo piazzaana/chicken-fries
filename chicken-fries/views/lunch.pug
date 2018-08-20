@@ -1,12 +1,24 @@
 extends layout
 
 block content
+    style(type='text/css').
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 30px;
+        }
+
     h1=title
 
     ul
-        li item 1
-        li item 2
-        li item 3
-        li ...
+        li
+            img(src='/images/lunch/chuttersnap-604567-unsplash.jpg' class='breakfast-image' width='100%' height='auto')
+        li
+            img(src='/images/lunch/oscar-nord-627731-unsplash.jpg' class='breakfast-image' width='100%' height='auto')
+        li
+            img(src='/images/lunch/vita-marija-murenaite-531510-unsplash.jpg' class='breakfast-image' width='100%' height='auto')
 
-    a(href='/create-pick-up-order') back to pick up order page
+    a(href='/menu-selection') back to order page

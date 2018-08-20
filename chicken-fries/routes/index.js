@@ -26,14 +26,9 @@ router.get('/location', function (req, res, next) {
     res.render('location',{title:'Location page'});
 });
 
-//get pick up order page
-router.get('/create-pick-up-order', function (req, res, next) {
-    res.render('create-pick-up-order', {title:'Create an order for pick up'});
-});
-
-//get delivery order page
-router.get('/create-delivery-order', function (req, res, next) {
-    res.render('create-delivery-order', {title:'Create an order for delivery'});
+//menu selection page page
+router.get('/menu-selection', function (req, res, next) {
+    res.render('menu-selection', {title:'Create an order for delivery'});
 });
 
 //get breakfast menu page
@@ -51,24 +46,15 @@ router.get('/dinner', function (req, res, next) {
     res.render('dinner', {title:'Dinner Menu'});
 });
 
-router.get('/order', function (req, res, next) {
-    res.render('order', {title: 'Order Page'});
-});
-
-router.get('/contact', function (req, res, next) {
-    res.render('contact', {title: 'Contact Us'});
-});
-
-router.get('/about', function (req, res, next) {
-    res.render('about', {title: 'About Us'});
-});
-
-router.get('/location', function (req, res, next) {
-    res.render('location', {title: 'Our Location'});
-});
-
+//get login page
 router.get('/login', function (req, res, next) {
     res.render('login', {title: 'Login Page'});
 });
 
+//get register page
+router.get('/register', function (req, res, next) {
+    res.render('register', {title: 'Create an account'})
+});
+
+//export router
 module.exports = router;

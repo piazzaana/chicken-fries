@@ -1,4 +1,44 @@
 extends layout
 
 block content
+
+    style(type='text/css').
+        .login-form{
+            display: block;
+            background-color: #D3D0CA;
+        }
+        #input-email,
+        #input-password,
+        .login{
+            margin: 20px;
+        }
+        .login{
+            background-color: #B91D3A;
+            color: white;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 20px;
+        }
+        .links a{
+            display: block;
+        }
+
     h1=title
+    p login before you can place your order
+
+    form.login-form(method='POST' action='')
+        div
+            div.header
+                h3 Login to your account
+        div.form-group(id='input-email')
+            input.form-control(type='email' placeholder='email')
+        div.form-group(id='input-password')
+            input.form-control(type='text' placeholder='password')
+        div.form-group
+            button.login
+                a(href='/menu-selection') Login
+    div.links
+        a(href='/register') Don't have an account yet? Register
+        a(href='/') back to home page

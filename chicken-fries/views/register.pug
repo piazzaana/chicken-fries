@@ -1,4 +1,45 @@
 extends layout
 
 block content
-    h1 Register Page
+    style(type='text/css').
+        .login-form {
+            display: block;
+            background-color: #D3D0CA;
+        }
+
+        .input-email,
+        .input-password,
+        .input-name,
+        .login, .terms {
+            margin: 20px;
+        }
+
+        .login {
+            background-color: #B91D3A;
+            color: white;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 20px;
+        }
+        .terms a{
+            color: black;
+        }
+
+    h1=title
+
+    form.login-form(method='POST' action='')
+        div
+            div.header
+                h3 Create your account
+        div.form-group.input-name
+            input.form-control(type='text' placeholder='name')
+        div.form-group.input-email
+            input.form-control(type='email' placeholder='email')
+        div.form-group.input-password
+            input.form-control(type='text' placeholder='password')
+        div.form-group.terms
+            a(href='') I accept the Terms
+        button.login
+            a(href='/menu-selection') Create
