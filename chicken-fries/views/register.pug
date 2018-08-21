@@ -2,7 +2,7 @@ extends layout
 
 block content
     style(type='text/css').
-        .login-form {
+        .register-form {
             display: block;
             background-color: #D3D0CA;
         }
@@ -10,11 +10,11 @@ block content
         .input-email,
         .input-password,
         .input-name,
-        .login, .terms {
+        .create, .terms {
             margin: 20px;
         }
 
-        .login {
+        .create {
             background-color: #B91D3A;
             color: white;
             height: 50px;
@@ -23,23 +23,28 @@ block content
             margin: 10px;
             font-size: 20px;
         }
-        .terms a{
-            color: black;
+        .terms{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
+
 
     h1=title
 
-    form.login-form(method='POST' action='')
+    form.register-form(method='POST' action='')
         div
             div.header
                 h3 Create your account
         div.form-group.input-name
-            input.form-control(type='text' placeholder='name')
+            input.form-control(type='text' placeholder='first name')
+        div.form-group.input-name
+            input.form-control(type='text' placeholder='last name')
         div.form-group.input-email
             input.form-control(type='email' placeholder='email')
         div.form-group.input-password
             input.form-control(type='text' placeholder='password')
         div.form-group.terms
             a(href='') I accept the Terms
-        button.login
-            a(href='/menu-selection') Create
+            button.create
+                a(href='/menu-selection') Create

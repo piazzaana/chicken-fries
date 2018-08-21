@@ -2,108 +2,123 @@ extends layout
 
 block content
     style(type='text/css').
-        ul {
+        ul{
             list-style-type: none;
             padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 30px;
-        }
-        .container{
-            height: 700px;
             width: 100%;
-            position: relative;
         }
-        .container p{
-            position: absolute;
-            top: 650px;
-            left: 15px;
+        .container {
+            margin: 20px auto;
+            padding: 0;
+        }
+        .image{
             width: 100%;
+            height: auto;
+        }
+        p.name{
+            margin-top: -50px;
             text-align: center;
         }
-        p span{
+        p span {
             color: white;
             font: bold 24px/45px "Comic Sans MS", Sans-Serif;
             letter-spacing: 1px;
-            background: rgb(0, 0, 0); /* fallback color */
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             padding: 10px;
+            border-radius: 10px;
         }
         .info{
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 20px;
             border-radius: 10px;
-            margin-top: 10px;
         }
-        .info p{
-            margin-bottom: 0;
+        .top-left{
+            display: flex;
+        }
+        .top-left img,
+        .top-left p{
+            margin-right: 10px;
+        }
+        .top-left img,
+        .top-right img{
+            height: 25px;
+            width: auto;
+        }
+        .top-right{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -40px;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
         }
         .buttons button{
-            background-color: #B91D3A;
-            color: white;
-            height: 70px;
-            width: 250px;
+            height: 50px;
+            width: 130px;
+            margin-top: 20px;
             border-radius: 10px;
-            font-size: 24px;
-            border: none;
+            color: white;
+            font-size: 20px;
         }
-        button.price{
+        .price{
+            margin-right: 10px;
             background-color: #D3D0CA;
-            margin-right: 20px;
+        }
+        .add{
+            background-color: #B91D3A;
+            border: none;
         }
 
     h1=title
-
     ul
-        li
-            div.container
-                img(src='/images/dinner/brooke-lark-200721-unsplash.jpg' class='breakfast-image' height='100%' width='auto')
-                p
-                    span food name
+        li.container
+            img.image(src='/images/dinner/brooke-lark-200721-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
             div.info
                 div.top-left
-                    img(src='/icons/clock.svg' height='25px' width='auto')
+                    img(src='/icons/clock.svg')
                     p 14 mins
-                    img(src='/icons/serving.svg' height='25px' width='auto')
+                    img(src='/icons/serving.svg')
                     p 1-2
                 div.top-right
-                    img(src='/icons/favorite.svg' height='25px' width='auto')
+                    img(src='/icons/favorite.svg')
                 div.buttons
                     button.price $29.00
-                    button Add to cart
-        li
-            div.container
-                img(src='/images/dinner/katherine-chase-493940-unsplash.jpg' class='breakfast-image' height='100%' width='auto')
-                p
-                    span food name
+                    button.add Add to cart
+
+        li.container
+            img.image(src='/images/dinner/katherine-chase-493940-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
             div.info
                 div.top-left
-                    img(src='/icons/clock.svg' height='25px' width='auto')
+                    img(src='/icons/clock.svg')
                     p 14 mins
-                    img(src='/icons/serving.svg' height='25px' width='auto')
+                    img(src='/icons/serving.svg')
                     p 1-2
                 div.top-right
-                    img(src='/icons/favorite.svg' height='25px' width='auto')
+                    img(src='/icons/favorite.svg')
                 div.buttons
                     button.price $29.00
-                    button Add to cart
-        li
-            div.container
-                img(src='/images/dinner/vlad-deep-417829-unsplash.jpg' class='breakfast-image' height='100%' width='auto')
-                p
-                    span food name
+                    button.add Add to cart
+
+        li.container
+            img.image(src='/images/dinner/vlad-deep-417829-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
             div.info
                 div.top-left
-                    img(src='/icons/clock.svg' height='25px' width='auto')
+                    img(src='/icons/clock.svg')
                     p 14 mins
-                    img(src='/icons/serving.svg' height='25px' width='auto')
+                    img(src='/icons/serving.svg')
                     p 1-2
                 div.top-right
-                    img(src='/icons/favorite.svg' height='25px' width='auto')
+                    img(src='/icons/favorite.svg')
                 div.buttons
                     button.price $29.00
-                    button Add to cart
+                    button.add Add to cart
 
     a(href='/menu-selection') back to order page
