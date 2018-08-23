@@ -11,8 +11,8 @@ exports.user_detail = function (req, res) {
 };
 
 //display register user form on get
-exports.register_user_get = function (req, res) {
-    res.send('Register user get');
+exports.register_user_get = function (req, res, next) {
+    res.render('register', {title: 'Create an account'})
 };
 
 //handle register user on post

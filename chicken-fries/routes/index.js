@@ -51,9 +51,9 @@ router.get('/login', function (req, res, next) {
     res.render('login', {title: 'Login Page'});
 });
 
-//get register page
-router.get('/register', function (req, res, next) {
-    res.render('register', {title: 'Create an account'})
+//get terms page
+router.get('/terms', function (req, res, next) {
+    res.render('terms', {title:'Terms and Conditions'})
 });
 
 //export router

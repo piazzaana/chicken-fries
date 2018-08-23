@@ -12,7 +12,7 @@ block content
         .login{
             margin: 20px;
         }
-        .login{
+        #login{
             background-color: #B91D3A;
             color: white;
             height: 50px;
@@ -33,12 +33,12 @@ block content
             div.header
                 h3 Login to your account
         div.form-group(id='input-email')
-            input.form-control(type='email' placeholder='email')
+            input.form-control(type='text' placeholder='email')
         div.form-group(id='input-password')
             input.form-control(type='text' placeholder='password')
-        div.form-group
-            button.login
-                a(href='/menu-selection') Login
+        div.form-group.login
+            button#login.login-button.login Login
+                Login
     div.links
-        a(href='/register') Don't have an account yet? Register
+        a(href='/users/register') Don't have an account yet? Register
         a(href='/') back to home page
