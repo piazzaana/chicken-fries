@@ -27,3 +27,13 @@ along with Chicken & Fries. If not, see https://www.gnu.org/licenses/gpl.html.
 
 // register order post type
 require_once plugin_dir_path( __FILE__ ) . 'includes/posttypes.php';
+register_activation_hook(__FILE__, 'chickenfries_rewrite_flush');
+
+// register customer role
+require_once plugin_dir_path(__FILE__) . 'includes/roles.php';
+register_activation_hook(__FILE__, 'chickenfries_register_role');
+register_deactivation_hook(__FILE__, 'chickenfries_remove_role');
+
+//add capabilities
+register_activation_hook(__FILE__,'chickenfries_add_capabilities');
+register_deactivation_hook(__FILE__,'chickenfries_remove_capabilities');

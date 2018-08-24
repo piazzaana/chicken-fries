@@ -40,17 +40,24 @@ function chickenfries_cpt_init() {
         'show_in_menu'       => true,
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'orders' ),
-        'capability_type'    => 'post',
+        'capability_type'    => 'order',
         'has_archive'        => true,
         'hierarchical'       => false,
 		    'show_in_rest'       => true,
-		    'rest_base'          => 'Orders',
+		    'rest_base'          => 'orders',
         'menu_position'      => null,
 		    'menu_icon'          => 'dashicons-exerpt-view',
         'supports'           => array( 'title', 'editor', 'author' ),
+        'map_meta_cap'       => true,
     );
 
     register_post_type( 'order', $args );
 }
 
 add_action( 'init', 'chickenfries_cpt_init' );
+
+// flush rewrite rules on activation
+function chickenfries_rewrite_flush(){
+  chickenfries_cpt_init();
+  flush_rewrite_rules();
+}
