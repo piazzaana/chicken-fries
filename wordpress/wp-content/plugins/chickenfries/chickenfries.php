@@ -37,3 +37,6 @@ register_deactivation_hook(__FILE__, 'chickenfries_remove_role');
 //add capabilities
 register_activation_hook(__FILE__,'chickenfries_add_capabilities');
 register_deactivation_hook(__FILE__,'chickenfries_remove_capabilities');
+
+//add cmb2 for new fields
+require_once plugin_dir_path( __FILE__ ) . 'includes/CMB2-functions.php';
