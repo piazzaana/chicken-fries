@@ -12,6 +12,32 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
+//manually render the status field
+function chickenfries_status_cb($field_args, $field){
+  $classes = $field->row_classes();
+  $id      = $field->args('id');
+  $label   = $field->args('name');
+  $status  = get_post_meta(get_the_ID(), 'order_status', true);
+  ?>
+  <div class="cmb-row custom-field-row <?php echo esc_attr($classes); ?>">
+    <div class="cmb-th">
+      <label> <?php echo esc_attr($label); ?> </label>
+    </div>
+    <div class="cmb-td">
+      <p>
+        <?php
+          if($status != true){
+            echo "In progress";
+          }else{
+            echo "Completed";
+          }
+        ?>
+      </p>
+    </div>
+  </div>
+  <?php
+}
+
 /**
  * Only show this box in the CMB2 REST API if the user is logged in.
  *
@@ -48,18 +74,9 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
   		'get_box_permissions_check_cb' => 'chickenfries_limit_rest_view_to_logged_in_users',
   	) );
 
-  	$cmb_rest->add_field( array(
-  		'name'       => esc_html__( 'REST Test Text', 'cmb2' ),
-  		'desc'       => esc_html__( 'Will show in the REST API for this box and for pages.', 'cmb2' ),
-  		'id'         => $prefix . 'text',
-  		'type'       => 'text',
-  	) );
-
-  	$cmb_rest->add_field( array(
-  		'name'       => esc_html__( 'REST Editable Test Text', 'cmb2' ),
-  		'desc'       => esc_html__( 'Will show in REST API "editable" contexts only (`POST` requests).', 'cmb2' ),
-  		'id'         => $prefix . 'editable_text',
-  		'type'       => 'text',
-  		'show_in_rest' => WP_REST_Server::EDITABLE,// WP_REST_Server::ALLMETHODS|WP_REST_Server::READABLE, // Determines which HTTP methods the field is visible in. Will override the cmb2_box 'show_in_rest' param.
-  	) );
+    $cmb_rest->add_field( array(
+      'name'          => esc_html__('Order status', 'chickenfries'),
+      'id'            => $prefix.'order_status',
+      'render_row_cb' => 'chickenfries_status_cb'
+    ));
   }
