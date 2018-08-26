@@ -3,9 +3,6 @@ let router = express.Router();
 //require controller modules
 let user_controller = require('../controllers/userController');
 
-//get request to register user
-router.get('/register', user_controller.register_user_get);
-
 //post request to register user
 router.post('/register', user_controller.register_user_post);
 

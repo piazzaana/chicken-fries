@@ -2,16 +2,16 @@ extends layout
 
 block content
 
-  img(src='/images/logo.png' class='logo')
-  h1= title
-  h2 Crispy like no other!
+    img(src='/images/logo.png' class='logo')
+    h1= title
+    h2 Crispy like no other!
 
-  form.order-choice(method='POST' action='')
-    div.form-group
-        div.header
-            h3 Place your order
-        div.btns
-            button.pick-up
-                a(href='/menu-selection') Pick Up
-            button.delivery
-                a(href='/login') Delivery
+    form.order-choice(method='POST' action='')
+        div.form-group
+            div.header
+                h3 Place your order
+            div.btns
+                button.pick-up
+                    a(href='/menu-selection') Pick Up
+                button.delivery
+                    a(href='/menu-selection') Delivery

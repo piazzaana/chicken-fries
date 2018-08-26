@@ -55,6 +55,10 @@ define('SECURE_AUTH_SALT', ':ed<Q6Nc(|{topw76c(<5]f:xx3%E&HVMJ-;[1&DM/9VGq/2KRTl
 define('LOGGED_IN_SALT',   'E.(HqoY*`A5Kvjb4H|nh.YhY+-X!#stao$M`npOcXD~Q&%DAKld;baegvhHGPhjN');
 define('NONCE_SALT',       '{.2HKh-x(WqsNGIx4(u))8^bx6{5S{$kYslf.t4!sXtHVZE#fArOu=;c c+hPdNm');
 
+// jwt settings
+define('JWT_AUTH_SECRET_KEY','% s%{J|NADUg0*0XtYdDj=Q)|I$sTM ydO^Uc-_har|oPmrBWj6{?2_&=QA*&-cW');
+define('JWT_AUTH_CORS_ENABLE', true);
+
 /**#@-*/
 
 /**

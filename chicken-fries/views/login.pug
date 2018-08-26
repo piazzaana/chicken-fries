@@ -10,15 +10,14 @@ block content
         #input-email,
         #input-password,
         .login{
-            margin: 20px;
+            margin: 15px 30px;
         }
-        #login{
+        .login{
             background-color: #B91D3A;
             color: white;
             height: 50px;
             width: 200px;
             border-radius: 10px;
-            margin: 10px;
             font-size: 20px;
         }
         .links a{
@@ -26,7 +25,6 @@ block content
         }
 
     h1=title
-    p login before you can place your order
 
     form.login-form(method='POST' action='')
         div
@@ -36,9 +34,10 @@ block content
             input.form-control(type='text' placeholder='email')
         div.form-group(id='input-password')
             input.form-control(type='text' placeholder='password')
-        div.form-group.login
-            button#login.login-button.login Login
-                Login
+        div.form-group
+            button.login Login
+
+    //if login credential are right got to menuselection page
     div.links
         a(href='/users/register') Don't have an account yet? Register
         a(href='/') back to home page

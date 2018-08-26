@@ -21,6 +21,11 @@ router.get('/contact', function (req, res, next) {
     res.render('contact', {title:'Contact Us page'});
 });
 
+//post contact page
+router.post('/contact', function (req, res, next) {
+    res.render('contact', {title: 'Message Sent!'});
+});
+
 //get location page
 router.get('/location', function (req, res, next) {
     res.render('location',{title:'Location page'});
@@ -49,6 +54,26 @@ router.get('/dinner', function (req, res, next) {
 //get login page
 router.get('/login', function (req, res, next) {
     res.render('login', {title: 'Login Page'});
+});
+
+//post login
+router.post('/login', function (req, res, next) {
+    res.redirect('/');
+});
+
+//get request to register page
+router.get('/register', function (req, res, next) {
+    res.render('register', {title: 'Registration Page'});
+});
+
+//get request for delivery form page
+router.get('/delivery', function (req, res, next) {
+    res.render('delivery', {title: 'Delivery Form Page'})
+});
+
+//post request for delivery form
+router.post('/delivery', function (req, res, next) {
+    res.render('delivery', {title: 'Delivery instructions saved!'});
 });
 
 //get terms page
