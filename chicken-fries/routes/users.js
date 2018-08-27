@@ -3,9 +3,6 @@ let router = express.Router();
 //require controller modules
 let user_controller = require('../controllers/userController');
 
-//post request to register user
-router.post('/register', user_controller.register_user_post);
-
 //get request to delete user
 router.get('/:id/delete', user_controller.user_delete_get);
 
