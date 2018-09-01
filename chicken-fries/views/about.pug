@@ -1,13 +1,36 @@
 extends layout
 
 block content
-    h1=title
+    style(type='text/css').
+        .staff{
+            width: 50%;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        p{
+            text-align: justify;
+            font-size: 30px;
+            margin: 20px;
+            padding: 20px;
+        }
 
-    h2 Our Story
-    p write the story here
+    div.container
+        h1=title
 
-    h2 Our Staff
-    p place an image and short bio about staff
+        h2 Our Story
+        p We are a family owned business, bringing delicious food to you for 3 generations.
 
+
+        div.staff
+            h2 Our Staff
+            img(src='/images/staff/joshua-k-jackson-568487-unsplash.jpg')
+            h3 Jane Doe
+            p She loves to cook
+        div.staff
+            img(src='/images/staff/ali-yahya-270126-unsplash.jpg')
+            h3 The Crew
+            p Each one of them brings something special to your food.
     a(href='/') back to home page
 

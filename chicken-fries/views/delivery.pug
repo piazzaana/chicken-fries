@@ -1,4 +1,53 @@
 extends layout
 
 block content
-    h1 Delivery Page
+    style(type='text/css').
+        body{
+            font-family: "Verdana", sans-serif;
+            font-size: 18px;
+        }
+        h3{
+            background-color: #B91D3A;
+            color: white;
+            padding: 5px;
+        }
+        label{
+            margin-bottom: 0;
+        }
+        .form-group{
+            margin: 10px;
+        }
+        .save {
+            background-color: #B91D3A;
+            color: white;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+    h1=title
+
+    div.container
+        h3 Delivery Order
+        form(method='POST' action='')
+            div.form-group
+                label Name:
+                input.form-control(type='text')
+            div.form-group
+                label Address:
+                input.form-control(type='text')
+            div.form-group
+                label Apartment/House Number:
+                input.form-control(type='text')
+            div.form-group
+                label City:
+                input.form-control(type='text')
+            div.form-group
+                label Zip:
+                input.form-control(type='text')
+            div.form-group
+                label Delivery Instructions:
+                textarea.form-control(placeholder='Enter your instructions here')
+            div.form-group
+                button.save Save

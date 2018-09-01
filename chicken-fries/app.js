@@ -3,31 +3,34 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const db = require('./config/mongoose');
+const passport = require('./config/passport');
+const expressSession = require('express-session');
+const MongoStore = require('connect-mongo')(expressSession);
 
-//set up database connection
-mongoose.connect('mongodb://localhost:27017/chicken-fries',{ useNewUrlParser:true});
-
-let db = mongoose.connection;
-
-//bind connection to error event
-db.on('error', console.error.bind(console, 'connection error:'));
-
-//bind connection to connection event
-db.once('open', function () {
-    console.log('DATABASE CONNECTED SUCCESSFULLY');
-});
-
-
+//routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
 
+app.use(expressSession({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({mongooseConnection: db})
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

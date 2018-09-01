@@ -1,12 +1,125 @@
 extends layout
 
 block content
+    style(type='text/css').
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 0;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        p.name {
+            margin-top: -50px;
+            text-align: center;
+        }
+        p span {
+            color: white;
+            font: bold 24px/45px "Comic Sans MS", Sans-Serif;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .info {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .top-left {
+            display: flex;
+        }
+        .top-left img,
+        .top-left p {
+            margin-right: 10px;
+        }
+        .top-left img,
+        .top-right img {
+            height: 25px;
+            width: auto;
+        }
+        .top-right {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -40px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+        .buttons button {
+            height: 50px;
+            width: 130px;
+            margin-top: 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+        .price {
+            margin-right: 10px;
+            background-color: #D3D0CA;
+        }
+        .add {
+            background-color: #B91D3A;
+            border: none;
+        }
+
     h1=title
 
     ul
-        li item 1
-        li item 2
-        li item 3
-        li ...
+        li.container
+            img.image(src='/images/lunch/chuttersnap-604567-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
+            div.info
+                div.top-left
+                    img(src='/icons/clock.svg')
+                    p 14 mins
+                    img(src='/icons/serving.svg')
+                    p 1-2
+                div.top-right
+                    img(src='/icons/favorite.svg')
+                div.buttons
+                    button.price(disabled) $19.00
+                    button.add Add to cart
 
-    a(href='/create-pick-up-order') back to pick up order page
+        li.container
+            img.image(src='/images/lunch/oscar-nord-627731-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
+            div.info
+                div.top-left
+                    img(src='/icons/clock.svg')
+                    p 14 mins
+                    img(src='/icons/serving.svg')
+                    p 1-2
+                div.top-right
+                    img(src='/icons/favorite.svg')
+                div.buttons
+                    button.price(disabled) $19.00
+                    button.add Add to cart
+
+        li.container
+            img.image(src='/images/lunch/vita-marija-murenaite-531510-unsplash.jpg' class='breakfast-image')
+            p.name
+                span food name
+            div.info
+                div.top-left
+                    img(src='/icons/clock.svg')
+                    p 14 mins
+                    img(src='/icons/serving.svg')
+                    p 1-2
+                div.top-right
+                    img(src='/icons/favorite.svg')
+                div.buttons
+                    button.price(disabled) $19.00
+                    button.add Add to cart
+
+    a(href='/menu-selection') back to order page
