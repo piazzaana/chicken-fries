@@ -27,13 +27,13 @@ router.get('/location', function (req, res, next) {
 });
 
 //get pick up order page
-router.get('/create-pick-up-order', function (req, res, next) {
-    res.render('create-pick-up-order', {title:'Create an order for pick up'});
+router.get('/pickup', function (req, res, next) {
+    res.render('pickup', {title:'Pickup'});
 });
 
 //get delivery order page
-router.get('/create-delivery-order', function (req, res, next) {
-    res.render('create-delivery-order', {title:'Create an order for delivery'});
+router.get('/delivery', function (req, res, next) {
+    res.render('delivery', {title:'Delivery'});
 });
 
 //get breakfast menu page

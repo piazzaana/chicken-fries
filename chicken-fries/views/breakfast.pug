@@ -2,10 +2,22 @@ extends layout
 
 block content
     h1= title
-    ul
-        li item 1
-        li item 2
-        li item 3
-        li ...
+
+    div.card-group
+        div.card
+            img.card-img-top(src='/images/lunch/al-nik-500032-unsplash.jpg')
+            div.card-body
+                h4.card-title Food name
+                p.card-text Description
+
+        div.card
+            div.card-body
+                h4.card-title Card title
+                p.card-text This card has supporting text below as a natural lead-in to additional content.
+
+        div.card
+            div.card-body
+                h4.card-title Card title
+                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
 
     a(href='/create-pick-up-order') back to pick up order page
