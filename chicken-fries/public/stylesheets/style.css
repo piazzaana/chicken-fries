@@ -2,6 +2,9 @@ html{
     position: relative;
     min-height: 100%;
 }
+body{
+    background-color: #EEE8D5;
+}
 nav{
     background-color: #B91D3A;
 }
