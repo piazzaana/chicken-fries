@@ -4,6 +4,12 @@ html{
 }
 body{
     background-color: #EEE8D5;
+    font-family: "Comic Sans MS", sans-serif;
+}
+.logo{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 nav{
     background-color: #B91D3A;
