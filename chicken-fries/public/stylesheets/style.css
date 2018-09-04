@@ -36,7 +36,25 @@ h2{
     align-items: flex-start;
     justify-content: space-around;
 }
-
+.breakfast,
+.lunch,
+.dinner{
+    display: flex;
+    background-color: #B91D3A;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.breakfast img,
+.lunch img,
+.dinner img{
+    max-width: 150px;
+    height: 150px;
+}
 button{
     background-color: #B91D3A;
     color: white;

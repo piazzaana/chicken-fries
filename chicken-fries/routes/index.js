@@ -46,4 +46,14 @@ router.post('/register', function (req, res, next) {
     res.send("register post route works");
 });
 
+/* GET order-selection page.*/
+router.get('/order-selection', function (req, res, next) {
+    res.render('order-selection', {title: 'Welcome to Chicken & Fries'});
+});
+
+/* GET menu-selection page.*/
+router.get('/menu-selection', function (req, res, next) {
+    res.render('menu-selection');
+});
+
 module.exports = router;
