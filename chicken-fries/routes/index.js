@@ -26,4 +26,14 @@ router.get('/location', function(req, res, next) {
     res.render('location');
 });
 
+/* GET login page.*/
+router.get('/login', function (req, res, next) {
+    res.render('login', {title: 'Welcome to Chicken & Fries'});
+});
+
+/* POST login.*/
+router.post('/login', function (req, res, next) {
+    res.send("post route working");
+});
+
 module.exports = router;

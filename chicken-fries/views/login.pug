@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    style(type='text/css').
+        h2{
+            text-align: center;
+            padding: 20px;
+        }
+        .card{
+            background-color: rgba(0, 0, 0, 0.30);
+        }
+        .card-header{
+            background-color: #B91D3A;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+        .button{
+            display: flex;
+            justify-content: flex-end;
+        }
+        button{
+            background-color: #B91D3A;
+            color: white;
+            border-radius: 8px;
+            border: none;
+        }
+
+
+    div.container
+        h2=title
+        div.card
+            div.card-header Login to your account
+            div.card-body
+                form(method='POST' action='/login')
+                    div.form-group
+                        input.form-control(type='text' name='username' placeholder='username')
+                    div.form-group
+                        input.form-control(type='password' name='password' placeholder='password')
+                    div.button
+                        button(type='submit') Login
