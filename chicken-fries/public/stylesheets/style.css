@@ -14,6 +14,48 @@ body{
 nav{
     background-color: #B91D3A;
 }
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.card{
+    background-color: rgba(0, 0, 0, 0.30);
+}
+.card-header{
+    background-color: #B91D3A;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+.register-button{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+button{
+    background-color: #B91D3A;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
+.register-link,
+.login-link{
+    display: flex;
+}
+.register-link p,
+.login-link p{
+    margin-right: 5px;
+}
+.register-link a,
+.login-link a{
+    color: black;
+    text-decoration: underline;
+}
 footer{
     position: absolute;
     bottom: 0;

@@ -33,7 +33,17 @@ router.get('/login', function (req, res, next) {
 
 /* POST login.*/
 router.post('/login', function (req, res, next) {
-    res.send("post route working");
+    res.send("login post route works");
+});
+
+/* GET registration page.*/
+router.get('/register', function (req, res, next) {
+    res.render('registration', {title: 'Welcome to Chicken & Fries'});
+});
+
+/* POST registration*/
+router.post('/register', function (req, res, next) {
+    res.send("register post route works");
 });
 
 module.exports = router;

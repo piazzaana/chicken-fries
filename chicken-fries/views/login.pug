@@ -1,42 +1,6 @@
 extends layout
 
 block content
-    style(type='text/css').
-        h2{
-            text-align: center;
-            padding: 20px;
-        }
-        .card{
-            background-color: rgba(0, 0, 0, 0.30);
-        }
-        .card-header{
-            background-color: #B91D3A;
-            color: white;
-            text-align: center;
-            font-size: 24px;
-        }
-        .button{
-            display: flex;
-            justify-content: flex-end;
-        }
-        button{
-            background-color: #B91D3A;
-            color: white;
-            border-radius: 8px;
-            border: none;
-        }
-        .register-link{
-            display: flex;
-        }
-        .register-link p{
-            margin-right: 5px;
-        }
-        .register-link a{
-            color: black;
-            text-decoration: underline;
-        }
-
-
     div.container
         h2=title
         div.card
@@ -51,4 +15,4 @@ block content
                         button(type='submit') Login
         div.register-link
             p Don't have an account yet?
-            a(href="#") Register
+            a(href="/register") Register
