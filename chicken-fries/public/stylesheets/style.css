@@ -18,10 +18,12 @@ h2{
     text-align: center;
     padding: 20px;
 }
-.card{
+.card,
+.modal-content{
     background-color: rgba(0, 0, 0, 0.30);
 }
-.card-header{
+.card-header,
+.modal-header{
     background-color: #B91D3A;
     color: white;
     text-align: center;
