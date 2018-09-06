@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const BreakfastItems = require('../models/breakfast');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -54,6 +55,19 @@ router.get('/order-selection', function (req, res, next) {
 /* GET menu-selection page.*/
 router.get('/menu-selection', function (req, res, next) {
     res.render('menu-selection');
+});
+
+/* GET breakfast menu page. populate item from the database*/
+
+router.get('/breakfast', function (req, res, next) {
+    BreakfastItems.find(function (err, docs) {
+        let itemChunks = [];
+        let chunkSize = 3;
+        for (let i = 0; i < docs.length; i += chunkSize){
+            itemChunks.push(docs.slice(i, i + chunkSize))
+        }
+        res.render('breakfast', {title:'Breakfast menus', items: itemChunks });
+    });
 });
 
 module.exports = router;
