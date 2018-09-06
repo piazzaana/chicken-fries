@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const BreakfastItems = require('../models/breakfast');
+const LunchItems = require('../models/lunch');
+const DinnerItems = require('../models/dinner');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -64,9 +66,31 @@ router.get('/breakfast', function (req, res, next) {
         let itemChunks = [];
         let chunkSize = 3;
         for (let i = 0; i < docs.length; i += chunkSize){
-            itemChunks.push(docs.slice(i, i + chunkSize))
+            itemChunks.push(docs.slice(i, i + chunkSize));
         }
-        res.render('breakfast', {title:'Breakfast menus', items: itemChunks });
+        res.render('breakfast', {title:'Breakfast menu', items: itemChunks });
+    });
+});
+
+router.get('/lunch', function (req, res, next) {
+    LunchItems.find(function (err, docs) {
+        let itemChunks = [];
+        let chunkSize = 3;
+        for(let i=0; i<docs.length; i+= chunkSize){
+            itemChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('lunch', {title:'Lunch menu', items: itemChunks});
+    });
+});
+
+router.get('/dinner', function (req, res, next) {
+    DinnerItems.find(function (err, docs) {
+        let itemChunks = [];
+        let chunkSize = 3;
+        for (let i=0; i<docs.length; i += chunkSize){
+            itemChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('dinner', {title:'Dinner menu', items: itemChunks});
     });
 });
 
