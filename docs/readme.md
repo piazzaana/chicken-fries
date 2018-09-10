@@ -49,10 +49,11 @@ Build a web application that can handle order and payment online and give the cu
 ## Pitch
 We know you are hungry! We'll take care of the food for you.
 
-# Spec
+# Specifications
 
 ## Feature Definitions
 Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issues)
+
 ## Sitemap
 * Home Page
 * Login Page
@@ -64,9 +65,13 @@ Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issu
 * About Page
 * Contact Page
 * Location Page
+
 ## Interface
+
 ### Information Architecture
+
 ### Browser Support
+
 ## Infrastructure
 Subject | Technology
 ------------ | -------------
@@ -74,28 +79,36 @@ Database | MongoDB
 Web Server | Express
 View Engine | Pug
 Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
+
 ### Programming Languages
 * NodeJS v10.5.0
 * MongoDB
+
 ### Integrations
+
 ### Deployment Workflow
+
 ### Web Host
 
 # Project Milestones
+
 ## Initial Pitch
 [Initial Pitch](https://youtu.be/ymOAJD-CXl0)
+
 ## Initial Project Spec
 [Project Spec](https://drive.google.com/drive/u/0/folders/1KMWsWTB7SPJ_40FZAg2L5TQ81lDt3Whn)
+
 ## MVP
+[MVP](https://github.com/piazzaana/chicken-fries/releases/tag/1.0)
+
 ## Pivot
+[Pivot]()
+
 ## Alpha Release
+[Alpha Release]()
+
 ## Beta Release
+Due - September 15th
+
 ## Public Release
-
-## Author
-* **Ana Cristina Piazza**
-
-See also the list of collaborators [Collaborators](https://github.com/piazzaana/chicken-fries/settings/collaboration) who participated in this project.
-
-## License
-This project is licensed under the GPLv3 License - see the [License](https://github.com/piazzaana/chicken-fries/blob/master/LICENSE.md) file for details.
+Due - September 20th
