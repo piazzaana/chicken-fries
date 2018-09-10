@@ -1,35 +1,34 @@
 # Table Of Contents
 
-* [Brief]()
-    * [Audience]()
-    * [Problem]()
-    * [Solution]()
-    * [Unique Value Proposition]()
-    * [Pitch]()
+* [Brief](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#brief)
+    * [Audience](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#audience)
+    * [Problem](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#problem)
+    * [Solution](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#solution)
+    * [Unique Value Proposition](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#unique-value-proposition)
+    * [Pitch](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#pitch)
     
-* [Spec]()
-    * [Feature Definitions]()
-    * [Sitemap]()
+* [Spec](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#spec)
+    * [Feature Definitions](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#feature-definitions)
+    * [Sitemap](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#sitemap)
     
-    * [Interface]()
-        * [Information Architecture]()
-        * [Browser Support]()
+    * [Interface](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#interface)
+        * [Information Architecture](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#information-architecture)
+        * [Browser Support](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#browser-support)
         
-    * [Infrastructure]()
-        * [Technical Requirements]()
-        * [Programming Languages]()
-        * [Integrations]()
-        * [Deployment Workflow]()
-        * [Web Host]()
+    * [Infrastructure](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#infrastructure)
+        * [Programming Languages](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#programming-languages)
+        * [Integrations](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#integrations)
+        * [Deployment Workflow](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#deployment-workflow)
+        * [Web Host](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#web-host)
         
-* [Project Milestones]()
-    * [Initial Pitch]()
-    * [Initial Project Spec]()
-    * [MVP]()
-    * [Pivot]()
-    * [Alpha Release]()
-    * [Beta Release]()
-    * [Public release]()
+* [Project Milestones](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#project-milestones)
+    * [Initial Pitch](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#initial-pitch)
+    * [Initial Project Spec](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#initial-project-spec)
+    * [MVP](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#mvp)
+    * [Pivot](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#pivot)
+    * [Alpha Release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#alpha-release)
+    * [Beta Release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#beta-release)
+    * [Public release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#public-release)
 
 # Brief
 On this brief I will go through the audience, the problem, the solution, my unique value proposition, and pitch. I'll identify the audience and the problem, will come up with a solution using my unique value proposition, and will deliver a pitch.
@@ -49,7 +48,7 @@ Build a web application that can handle order and payment online and give the cu
 ## Pitch
 We know you are hungry! We'll take care of the food for you.
 
-# Specifications
+# Spec
 
 ## Feature Definitions
 Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issues)
