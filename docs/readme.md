@@ -75,6 +75,7 @@ Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issu
 Subject | Technology
 ------------ | -------------
 Database | MongoDB
+Server | [Heroku](https://signup.heroku.com/?c=70130000001xDpdAAE&gclid=CjwKCAjwrNjcBRA3EiwAIIOvq2oCd5TFYKzJcZKCfMbWPMPHlotBSAf-IWOglGjycW0UBP-saRn3cxoCtaQQAvD_BwE)
 Web Server | Express
 View Engine | Pug
 Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
