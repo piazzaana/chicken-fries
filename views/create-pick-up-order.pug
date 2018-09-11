@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    style(type='text/css').
+        div.header{
+            margin-bottom: 20px;
+        }
+        a.menu{
+            color: white;
+            text-decoration: none;
+        }
+
+    h1=title
+
+    div.header
+        h3 Place your order
+    div.menu-btns
+        button.breakfast
+            a.menu(href='/breakfast') Breakfast
+        button.lunch
+            a.menu(href='/lunch') Lunch
+        button.dinner
+            a.menu(href='/dinner') Dinner
+
+    a(href='/') back to home page

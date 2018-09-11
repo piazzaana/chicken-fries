@@ -1,25 +1,17 @@
 extends layout
 
 block content
-  style(type='text/css').
-    body{
-      background-color: #B91D3A;
-      color: white;
-    }
-    .logo{
-      margin-top: 50px;
-    }
-    .welcome{
-      font-weight: bold;
-    }
-    .subheader{
-      margin-bottom: 50px;
-    }
-    h1{
-      text-align: center;
-    }
 
-  div.container
-    img.logo(src='images/logo.png')
-    h1.welcome Welcome to Chicken & Fries
-    h1.subheader Crispy like no other!
+  img(src='/images/logo.png' class='logo')
+  h1= title
+  h2 Crispy like no other!
+
+  form.order-choice(method='POST' action='')
+    div.form-group
+        div.header
+            h3 Place your order
+        div.btns
+            button.pick-up
+                a(href='/create-pick-up-order') Pick Up
+            button.delivery
+                a(href='/create-delivery-order') Delivery
