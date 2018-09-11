@@ -29,3 +29,22 @@ Open your favorite browser and go to
 ```
 localhost:3000
 ```
+
+## Built With
+
+* Express (https://expressjs.com) - The web framework used
+* NPM (https://docs.npmjs.com/cli/install) - Dependency Management
+
+## Versioning
+
+We use GitHub for version control (https://github.com) 
+
+## Author
+
+* **Ana Cristina Piazza**
+
+See also the list of collaborators (https://github.com/piazzaana/chicken-fries/settings/collaboration) who participated in this project.
+
+## License
+
+This project is licensed under the GPLv3 License - see the LICENSE.md (LICENSE.md) file for details
