@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    style(type='text/css').
+        button.order{
+            display: block;
+            margin: 20px auto;
+            width: 70%;
+            height: 60px;
+        }
+
+    div.container
+        h2=title
+        div.card
+            div.card-header Choose your type of order
+            div.card-body
+                button.order Pick Up
+                button.order Delivery

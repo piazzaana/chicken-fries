@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.container
+        h2=title
+        div.card
+            div.card-header Create your account
+            div.card-body
+                form(method='POST' action='/register')
+                    div.form-group
+                        input.form-control(type='text' name='name' placeholder='name')
+                    div.form-group
+                        input.form-control(type='text' name='username' placeholder='username')
+                    div.form-group
+                        input.form-control(type='password' name='password' placeholder='password')
+                    div.register-button
+                        div.form-check
+                            input.form-check-input(type='checkbox' name='checkbox' id='checkbox')
+                            label(for='checkbox') I agree with the terms
+                        button(type='submit') Create account
+        div.login-link
+            p Already registered?
+            a(href="/login") Login

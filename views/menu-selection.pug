@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    div.container
+        style(type='text/css').
+            .card{
+                margin-bottom: 100px;
+            }
+            a{
+                color: white;
+                margin-left: 10px;
+            }
+
+        h2=title
+        div.card
+            div.card-header Choose your menu
+            div.card-body
+                div.breakfast
+                    a(href='#') Breakfast Menu
+                    img(src='images/breakfast/alison-marras-361028-unsplash.jpg')
+                div.lunch
+                    a(href='#') Lunch Menu
+                    img(src='images/lunch/haseeb-jamil-466109-unsplash.jpg')
+                div.dinner
+                    a(href='#') Dinner Menu
+                    img(src='images/dinner/toa-heftiba-581911-unsplash.jpg')
