@@ -5,23 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-//set up database connection
-mongoose.connect('mongodb://localhost:27017/chicken-fries',{ useNewUrlParser:true});
-
-let db = mongoose.connection;
-
-//bind connection to error event
-db.on('error', console.error.bind(console, 'connection error:'));
-
-//bind connection to connection event
-db.once('open', function () {
-    console.log('DATABASE CONNECTED SUCCESSFULLY');
-});
-
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost:27017/chicken-fries',{ useNewUrlParser: true });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
