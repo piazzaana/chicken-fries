@@ -1,7 +1,7 @@
 A Quick Guide to GPLv3
  Brett Smith
 Free Software Foundation, Inc. licensing@fsf.org
-Copyright ⃝c 2007 Free Software Foundation, Inc.
+Copyright 2007 Free Software Foundation, Inc.
 Verbatim copying and distribution of this entire article are permitted worldwide, without royalty, in any medium, provided this notice is preserved.
 
 Introduction
