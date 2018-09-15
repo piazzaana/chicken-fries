@@ -2,27 +2,25 @@ extends layout
 
 block content
     style(type='text/css').
-        div.redirect{
-            text-align: right;
-            margin: 50px;
-            font-size: 20px;
+        button a{
+            color: white;
+        }
+        button.pick-up,
+        button.delivery{
+            display: block;
+            width: 150px;
+            margin:10px auto;
         }
 
-        div.redirect a{
-            color: black;
-        }
 
-    h1=title
-
-    form.order-choice(method='POST' action='')
-        div.form-group
-            div.header
-                h3 Place your order
-            div.btns
-                button.pick-up
-                    a(href='/create-pick-up-order') Pick Up
-                button.delivery
-                    a(href='/create-delivery-order') Delivery
+    div.card
+        div.card-header
+            h4 Place your order
+        div.card-body
+            button.pick-up
+                a(href='/users/pickup') Pick Up
+            button.delivery
+                a(href='/users/delivery') Delivery
 
     div.redirect
         a(href='/') back to home page

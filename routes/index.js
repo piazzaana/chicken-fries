@@ -13,7 +13,7 @@ router.get('/about', function (req, res, next) {
 
 //get contact page
 router.get('/contact', function (req, res, next) {
-    res.render('contact', {title:'Contact Us page'});
+    res.render('contact');
 });
 
 //get location page
