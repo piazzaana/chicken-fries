@@ -4,19 +4,16 @@ html{
 }
 body {
   padding: 50px;
-  font: 16px "Comic Sans MS", Helvetica, Arial, sans-serif;
+  font: 20px "Comic Sans MS", Helvetica, Arial, sans-serif;
   background-color: #EEE8D5;
 }
 .navbar{
   background-color: #B91D3A;
 }
-.si-glyph-magnifier{
-  height: 30px;
+
+button.navbar-toggler-icon{
   width: auto;
-}
-.navbar-toggler-icon{
-  height: 30px;
-  width: auto;
+  color: white;
 }
 main{
   margin-top: 50px;
@@ -38,9 +35,7 @@ form.order-choice{
   margin-bottom: 50px;
   background-color: #D3D0CA;
   width: 30%;
-
   padding-bottom: 10px;
-
 }
 form a{
   color: white;

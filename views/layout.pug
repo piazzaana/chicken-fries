@@ -1,32 +1,66 @@
 doctype html
 html(lang='en')
   head
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    <!-- Required meta tags -->
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    <!-- Bootstrap CSS -->
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
+    title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-
-    title=title
 
   body
     header
-      nav(class='navbar navbar-dark fixed-top')
-        button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-          img(src='/icons/three-bars.svg' class='navbar-toggler-icon')
-        a(class='navbar-brand' href='/') Chicken & Fries
-        img(src='/icons/si-glyph-magnifier.svg' class='si-glyph-magnifier')
-        div(class='collapse navbar-collapse' id='navbarSupportedContent')
-          ul(class='navbar-nav mr-auto')
-            li(class='nav-item')
-              a(class='nav-link' href='/') Home
-            li(class='nav-item')
-              a(class='nav-link' href='/order') Order
-            li(class='nav-item')
-              a(class='nav-link' href='/about') About Us
-            li(class='nav-item')
-              a(class='nav-link' href='/contact') Contact
-            li(class='nav-item')
-              a(class='nav-link' href='/location') Location
+      nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+        a.navbar-brand(href="/") Chicken & Fries
+        button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        div.collapse.navbar-collapse(id='navbarSupportedContent')
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href="/") Home
+            li.nav-item
+              a.nav-link(href="/users/order") Order
+            li.nav-item
+              a.nav-link(href="/about") About
+            li.nav-item
+              a.nav-link(href="/contact") Contact
+            li.nav-item
+              a.nav-link(href="/location") Location
+            ul.nav.navbar-nav.flex-row.justify-content-between
+              li.nav-item.order-2.order-md-1
+                a.nav-link(href="#" title="settings")
+                  i.fa.fa-cog.fa-fw.fa-lg
+              li.dropdown.order-1
+                button.btn.btn-outline-secondary.dropdown-toggle(type="button" id="dropdownMenu1" data-toggle="dropdown") Login
+                span.caret
+                  ul.dropdown-menu.dropdown-menu-right.mt-1
+                    li.px-3.py-2
+                      form.form(role="form" method="POST" action="/login")
+                        div.form-group
+                          input.form-control(id="emailInput" placeholder="Email" type="text" required="")
+                        div.form-group
+                          input.form-control(id="passwordInput" placeholder="Password" type="text" required="")
+                        div.form-group
+                          button.btn.btn-primary.btn-block(type="submit") Login
+                        div.form-group.text-center
+                          small
+                            a(href="#" data-toggle="modal" data-target="#modal") Forgot password?
+                            div()
+                              p(style="margin-bottom:0;") Don't have an account?
+                              a(href="/register") Register
+            div.modal.fade#modal(tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true")
+              div.modal-dialog(role="document")
+                div.modal-content
+                  div.modal-header
+                    h5.modal-title(id="exampleModal3Label") Modal title
+                    button.close(type="button" data-dismiss="modal" aria-label="Close")
+                      span(aria-hidden="true") &times;
+                  div.modal-body
+                    h1 Modal Window Body
+                  div.modal-footer
+                    button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                    button.btn.btn-primary(type="button") Save changes
 
     main
       block content

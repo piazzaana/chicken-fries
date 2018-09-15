@@ -2,26 +2,18 @@ extends layout
 
 block content
     style(type='text/css').
-        div.card{
-            background-color: rgba(0, 0, 0, 0.25);
-            margin-bottom: 20px;
-        }
-        div.card-header{
+        body{
             background-color: #B91D3A;
             color: white;
+            display: flex;
+            justify-content: center;
         }
-        .btn{
-            background-color: #B91D3A;
-            display: block;
-            margin: 10px;
-            color: white;
+        .container{
+            margin-top: 50px;
         }
-    h1= title
-    img(src='/images/logo.png' class='logo')
-    h2 Crispy like no other!
-    div.card
-        div.card-header
-            h4 Place your order
-        div.card-body
-            a.btn(href='/pickup') Pick Up
-            a.btn(href='/delivery') Delivery
+
+
+    div.container
+        h1= title
+        img(src='/images/logo.png' class='logo')
+        h2 Crispy like no other!
