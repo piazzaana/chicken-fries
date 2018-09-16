@@ -1,50 +1,114 @@
-# Chicken & Fries
+# Table Of Contents
 
-This is a project for the Web Application Integration online class at Full Sail University
+* [Brief](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#brief)
+    * [Audience](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#audience)
+    * [Problem](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#problem)
+    * [Solution](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#solution)
+    * [Unique Value Proposition](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#unique-value-proposition)
+    * [Pitch](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#pitch)
+    
+* [Spec](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#spec)
+    * [Feature Definitions](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#feature-definitions)
+    * [Sitemap](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#sitemap)
+    
+    * [Interface](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#interface)
+        * [Information Architecture](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#information-architecture)
+        * [Browser Support](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#browser-support)
+        
+    * [Infrastructure](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#infrastructure)
+        * [Programming Languages](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#programming-languages)
+        * [Integrations](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#integrations)
+        * [Deployment Workflow](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#deployment-workflow)
+        * [Web Host](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#web-host)
+        
+* [Project Milestones](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#project-milestones)
+    * [Initial Pitch](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#initial-pitch)
+    * [Initial Project Spec](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#initial-project-spec)
+    * [MVP](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#mvp)
+    * [Pivot](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#pivot)
+    * [Alpha Release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#alpha-release)
+    * [Beta Release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#beta-release)
+    * [Public release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#public-release)
 
-## Getting Started
+# Brief
+On this brief I will go through the audience, the problem, the solution, my unique value proposition, and pitch. I'll identify the audience and the problem, will come up with a solution using my unique value proposition, and will deliver a pitch.
 
-These instructions will get you a copy of the project up and running on your local machine.
+## Audience
+The audience for this particular fast food restaurant would be adults between the ages of 18 – 50 years old, who work all day and don’t have much time to cook, they would not spend more than $50 on a meal and, for most part they would be single or live with a partner, not necessarily married, and have no children. 
 
-### Prerequisites
+## Problem
+The problem that this audience have is time. They have a busy lifestyle, not much time to cook or to be hanging on the phone ordering food. They want good, affordable, and fast food.
 
-To run this project on you local computer you need to have NodeJs and NPM installed on your machine
+## Solution
+The solution will be a online food ordering system.
 
-### Installing
+## Unique Value Proposition
+Build a web application that can handle order and payment online and give the customer a approximate 'ready time', so the customer knows when the food will be ready and can take care of their busy lives while they wait for the food.
 
-A step by step series of examples that tell you how to get a development env running
+## Pitch
+We know you are hungry! We'll take care of the food for you.
 
-First clone or download the files on your machine
+# Spec
 
-Place the files in an easy to access folder on your machine
+## Feature Definitions
+Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issues)
 
-```
-Desktop
-```
-Open your terminal window and run the following command
-```
-nodemon bin/www
-```
-Open your favorite browser and go to
-```
-localhost:3000
-```
+## Sitemap
+* Home Page
+* Login Page
+* Registration Page
+* Menu Selection Page
+* Breakfast Menu
+* Lunch Menu
+* Dinner Menu
+* About Page
+* Contact Page
+* Location Page
 
-## Built With
-* [MongoDB](https://www.mongodb.com/)
-* [Express](https://expressjs.com) - The web framework used
-* [NPM](https://docs.npmjs.com/cli/install) - Dependency Management
+## Interface
 
-## Versioning
+### Information Architecture
 
-We use GitHub for version control (https://github.com) 
+### Browser Support
 
-## Author
+## Infrastructure
+Subject | Technology
+------------ | -------------
+Database | MongoDB
+Server | [Heroku](https://signup.heroku.com/?c=70130000001xDpdAAE&gclid=CjwKCAjwrNjcBRA3EiwAIIOvq2oCd5TFYKzJcZKCfMbWPMPHlotBSAf-IWOglGjycW0UBP-saRn3cxoCtaQQAvD_BwE)
+Web Server | Express
+View Engine | Pug
+Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 
-* **Ana Cristina Piazza**
+### Programming Languages
+* NodeJS v10.5.0
+* MongoDB
 
-See also the list of collaborators (https://github.com/piazzaana/chicken-fries/settings/collaboration) who participated in this project.
+### Integrations
 
-## License
+### Deployment Workflow
 
-This project is licensed under the GPLv3 License - see the LICENSE.md (LICENSE.md) file for details
+### Web Host
+
+# Project Milestones
+
+## Initial Pitch
+[Initial Pitch](https://youtu.be/ymOAJD-CXl0)
+
+## Initial Project Spec
+[Project Spec](https://drive.google.com/drive/u/0/folders/1KMWsWTB7SPJ_40FZAg2L5TQ81lDt3Whn)
+
+## MVP
+[MVP](https://github.com/piazzaana/chicken-fries/releases/tag/1.0)
+
+## Pivot
+[Pivot]()
+
+## Alpha Release
+[Alpha Release]()
+
+## Beta Release
+Due - September 15th
+
+## Public Release
+Due - September 20th
