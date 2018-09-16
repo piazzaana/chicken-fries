@@ -1,5 +1,26 @@
 extends layout
 
 block content
-    div.container
-        h1 Order Page
+    style(type='text/css').
+        button a{
+            color: white;
+        }
+        button.pick-up,
+        button.delivery{
+            display: block;
+            width: 150px;
+            margin:10px auto;
+        }
+
+
+    div.card
+        div.card-header
+            h4 Place your order
+        div.card-body
+            button.pick-up
+                a(href='/users/pickup') Pick Up
+            button.delivery
+                a(href='/users/delivery') Delivery
+
+    div.redirect
+        a(href='/') back to home page
