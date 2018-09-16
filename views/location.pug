@@ -1,5 +1,22 @@
 extends layout
 
 block content
-    div.container
-        h1 Location page
+    style(type='text/css').
+        iframe{
+            display: block;
+            margin: 10px auto;
+            width: 100%;
+            padding: 20px;
+        }
+
+    div.card
+        div.card-img
+            iframe(height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=5th%20avenue%20new%20york&key=AIzaSyC6ST6MLKX9lku-MOJK-9c2JaHbnbT5gFo" allowfullscreen)
+        div.card-body
+            h2 Chicken & Fries
+            p Address: 350 5th ave, New York, NY
+            p Phone Number: 1(800) 555-5555
+
+    div.redirect
+        a(href='/') back to home page
+
