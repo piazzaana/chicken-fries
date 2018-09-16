@@ -46,6 +46,23 @@ h1, h2, h3, h4{
   color: white;
 }
 
+/*Menu Cards*/
+.card.menu{
+  display: inline-flex;
+  max-width: calc(100% / 3 - 10px);
+  height: 530px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+}
+.icons,.price-add{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+
+
 /*Redirect links*/
 div.redirect{
   text-align: right;

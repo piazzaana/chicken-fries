@@ -1,31 +1,84 @@
-const BreakfastItem = require('../models/breakfast');
+const Breakfast = require('../models/breakfast');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/chicken-fries',{ useNewUrlParser: true });
 
-let items = [
-    new BreakfastItem({
-        imagePath: 'images/breakfast/alison-marras-361028-unsplash.jpg',
-        name: 'Fried egg',
-        description: 'Fried egg with cheese',
+let breakfastMenu = [
+    new Breakfast({
+        imagePath: 'images/breakfast/item-1.jpg',
+        name: 'Egg, bacon & sausage',
         readyTime: 15,
         servingSize: 1,
         favorite: false,
         price: 15
     }),
-    new BreakfastItem({
-        imagePath: 'images/breakfast/alison-marras-361028-unsplash.jpg',
-        name: 'ovo frito',
-        description: 'Fried egg with cheese',
+    new Breakfast({
+        imagePath: 'images/breakfast/item-2.jpg',
+        name: 'Fried egg & herbs',
         readyTime: 15,
         servingSize: 1,
         favorite: false,
         price: 15
     }),
-    new BreakfastItem({
-        imagePath: 'images/breakfast/alison-marras-361028-unsplash.jpg',
-        name: 'Scrambled egg',
-        description: 'Fried egg with cheese',
+    new Breakfast({
+        imagePath: 'images/breakfast/item-3.jpg',
+        name: 'Croissant',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-4.jpg',
+        name: 'Fruits & cereal',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-5.jpg',
+        name: 'Egg & ham',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-6.jpg',
+        name: 'Pancake & oranges',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-7.jpg',
+        name: 'Grilled sausage and egg',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-8.jpg',
+        name: 'Scrambled eggs',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-9.jpg',
+        name: 'Waffles',
+        readyTime: 15,
+        servingSize: 1,
+        favorite: false,
+        price: 15
+    }),
+    new Breakfast({
+        imagePath: 'images/breakfast/item-10.jpg',
+        name: 'Full breakfast',
         readyTime: 15,
         servingSize: 1,
         favorite: false,
@@ -35,10 +88,10 @@ let items = [
 
 let done = 0;
 
-for(let i = 0; i < items.length; i++){
-    items[i].save(function (err, result) {
+for(let i = 0; i < breakfastMenu.length; i++){
+    breakfastMenu[i].save(function (err, result) {
         done++;
-        if(done === items.length){
+        if(done === breakfastMenu.length){
             exit();
         }
     })

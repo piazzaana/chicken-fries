@@ -2,11 +2,15 @@ extends layout
 
 block content
     h1=title
-
     ul
-        li item 1
-        li item 2
-        li item 3
-        li ...
-
-    a(href='/create-pick-up-order') back to pick up order page
+        each items in dinner
+            div.card.menu
+                img.card-img-top(src=items.imagePath)
+                div.card-body
+                    h4.card-title=items.name
+                    div.icons
+                        i.fas.fa-utensils=' - '+items.servingSize
+                        i.far.fa-heart
+                    div.price-add
+                        p.card-text.price='$' + items.price + '.00'
+                        button(style="float:right") Add to cart
