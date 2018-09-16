@@ -1,5 +1,28 @@
 extends layout
 
 block content
-    div.container
-        h1 Contact page
+    style(type='text/css').
+        button{
+            float: right;
+        }
+
+    div.card
+        div.card-header
+            h4 Contact us
+        div.card-body
+
+        form(method='POST' action='/contact')
+            div.form-group
+                label Name
+                input.form-control(type='text' placeholder='Your name')
+            div.form-group
+                label Email
+                input.form-control(type='email' placeholder='youremail@provider.com')
+            div.form-group
+                label Message
+                textarea.form-control(placeholder='your message')
+
+            button(type='submit') Send Message
+
+    div.redirect
+        a(href='/') back to home page
