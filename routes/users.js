@@ -33,7 +33,8 @@ router.get('/signin', function (req, res, next) {
 
 //get user sign up page
 router.get('/signup', function (req, res, next) {
-    res.render('user/signup', {csrfToken: req.csrfToken()});
+    var messages = req.flash('error');
+    res.render('user/signup', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
 
 //post rout for user sign up

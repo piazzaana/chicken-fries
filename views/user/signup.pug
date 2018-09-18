@@ -2,6 +2,8 @@ extends ../layout
 
 block content
     h1=title
+    if hasErrors
+        div.alert.alert-danger=messages
     div.card
         div.card-header
             h3 Create you account
