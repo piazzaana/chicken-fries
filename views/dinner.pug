@@ -1,18 +1,16 @@
 extends layout
 
 block content
-    div.container
-        h2=title
-        ul
-            each menuItem in items
-                div.wrapper
-                    each item,i in menuItem
-                        div.card
-                            img.card-img-top.img-fluid(src=item.imagePath)
-                            div.card-body
-                                h5.card-title=item.name
-                                p.card-text=item.description
-                                p.card-text=item.readyTime+" minutes"
-                                p.card-text=item.servingSize+" person"
-                                p.card-text="$"+item.price+".00"
-                                a.btn.btn-success(href="#") Add to cart
+    h1=title
+    ul
+        each items in dinner
+            div.card.menu
+                img.card-img-top(src=items.imagePath)
+                div.card-body
+                    h4.card-title=items.name
+                    div.icons
+                        i.fas.fa-utensils=' - '+items.servingSize
+                        i.far.fa-heart
+                    div.price-add
+                        p.card-text.price='$' + items.price + '.00'
+                        button(style="float:right") Add to cart

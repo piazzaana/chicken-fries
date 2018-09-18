@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let schema = new Schema({
-    imagePath:{type: String},
-    name:{type: String},
-    description:{type: String},
-    readyTime:{type: Number},
-    servingSize:{type: Number},
-    favorite:{type: Boolean},
-    price:{type: Number}
+    imagePath:{type:String, required:true},
+    name:{type:String, required:true},
+    readyTime:{type:Number, required:true},
+    servingSize:{type:Number,required:true},
+    favorite:{type:Boolean, required:true},
+    price:{type:Number, required:true},
 });
 
-module.exports = mongoose.model('DinnerItem', schema);
+module.exports = mongoose.model('Dinner', schema);
