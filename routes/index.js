@@ -27,21 +27,21 @@ router.get('/location', function (req, res, next) {
 //get breakfast menu page
 router.get('/breakfast', function (req, res, next) {
     Breakfast.find(function (err, docs) {
-        res.render('breakfast', {title: 'Breakfast Menu', breakfast: docs});
+        res.render('menus/breakfast', {title: 'Breakfast Menu', breakfast: docs});
     });
 });
 
 //get lunch page
 router.get('/lunch', function (req, res, next) {
     Lunch.find(function (err, docs) {
-        res.render('lunch', {title:'Lunch Menu', lunch: docs});
+        res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
     });
 });
 
 //get dinner menu
 router.get('/dinner', function (req, res, next) {
     Dinner.find(function (err, docs) {
-        res.render('dinner', {title:'Dinner Menu', dinner:docs});
+        res.render('menus/dinner', {title:'Dinner Menu', dinner:docs});
     });
 });
 

@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
     h1=title
@@ -14,3 +14,5 @@ block content
                     div.price-add
                         p.card-text.price='$'+items.price+'.00'
                         button(style="float:right") Add to cart
+        div.redirect
+            a(href='/users/order') Chose another menu
