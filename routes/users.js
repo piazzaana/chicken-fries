@@ -28,12 +28,20 @@ router.get('/order', function (req, res, next) {
 
 //get user sign in page
 router.get('/signin', function (req, res, next) {
-    res.render('user/signin', {title: 'sign in page'});
+    let messages = req.flash('error');
+    res.render('user/signin', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
+
+//post route for user sign in
+router.post('/signin', passport.authenticate('local.signin',{
+    successRedirect:'/users/profile',
+    failureRedirect: '/users/signin',
+    failureFlash: true
+}));
 
 //get user sign up page
 router.get('/signup', function (req, res, next) {
-    var messages = req.flash('error');
+    let messages = req.flash('error');
     res.render('user/signup', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
 
