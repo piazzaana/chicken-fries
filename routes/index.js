@@ -27,33 +27,21 @@ router.get('/location', function (req, res, next) {
 //get breakfast menu page
 router.get('/breakfast', function (req, res, next) {
     Breakfast.find(function (err, docs) {
-<<<<<<< HEAD
         res.render('menus/breakfast', {title: 'Breakfast Menu', breakfast: docs});
-=======
-        res.render('breakfast', {title: 'Breakfast Menu', breakfast: docs});
->>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
     });
 });
 
 //get lunch page
 router.get('/lunch', function (req, res, next) {
     Lunch.find(function (err, docs) {
-<<<<<<< HEAD
         res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
-=======
-        res.render('lunch', {title:'Lunch Menu', lunch: docs});
->>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
     });
 });
 
 //get dinner menu
 router.get('/dinner', function (req, res, next) {
     Dinner.find(function (err, docs) {
-<<<<<<< HEAD
         res.render('menus/dinner', {title:'Dinner Menu', dinner:docs});
-=======
-        res.render('dinner', {title:'Dinner Menu', dinner:docs});
->>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
     });
 });
 
