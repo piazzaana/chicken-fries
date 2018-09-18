@@ -20,10 +20,10 @@ router.use(csrfProtection);
 //     res.render('delivery', {title:'Delivery'});
 // });
 
-// //make it a user route
-// router.get('/order', function (req, res, next) {
-//     res.render('order', {title: 'Order Page'});
-// });
+//make it a user route
+router.get('/order', function (req, res, next) {
+    res.render('order', {title: 'Order Page'});
+});
 
 //get user sign in page
 router.get('/signin', function (req, res, next) {
