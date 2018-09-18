@@ -38,14 +38,14 @@ html(lang='en')
               a.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
                 <i class="fas fa-user"></i> User Management
               div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                if login
+                  a.dropdown-item(href="/users/profile") Profile
 
-                a.dropdown-item(href="/users/profile") Profile
+                  a.dropdown-item(href="/users/logout") Logout
+                else
+                  a.dropdown-item(href="/users/signup") Sign up
 
-                a.dropdown-item(href="/users/logout") Logout
-
-                a.dropdown-item(href="/users/signup") Sign up
-
-                a.dropdown-item(href="/users/signin") Sign in
+                  a.dropdown-item(href="/users/signin") Sign in
     main
       div.container
         block content

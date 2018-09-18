@@ -6,24 +6,24 @@ var passport = require('passport');
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
+//get user profile page
+router.get('/profile', isLoggedIn, function (req, res, next) {
+    res.render('user/profile', {title: 'User profile'});
+});
 
-// //get pick up order page //make it a user route
-// router.get('/pickup', function (req, res, next) {
-//     res.render('pickup', {title:'Pickup'});
-// });
+//get lougout route
+router.get('/logout', isLoggedIn, function (req, res, next) {
+    req.logout();
+    res.redirect('/');
+});
 
-// //get delivery order page //make it a user route
-// router.get('/delivery', function (req, res, next) {
-//     res.render('delivery', {title:'Delivery'});
-// });
-
-//make it a user route
-router.get('/order', function (req, res, next) {
+router.get('/order', isLoggedIn, function (req, res, next) {
+    //TODO add message to tell the customer that they need to sign in to access the order tab
     res.render('order', {title: 'Order Page'});
+});
+
+router.use('/', notLoggedIn, function (req, res, next) {
+    next();
 });
 
 //get user sign in page
@@ -52,9 +52,18 @@ router.post('/signup', passport.authenticate('local.signup', {
     failureFlash: true
 }));
 
-//get user profile page
-router.get('/profile', function (req, res, next) {
-    res.render('user/profile', {title: 'User profile'});
-});
-
 module.exports = router;
+
+function isLoggedIn(req,res,next) {
+    if (req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}
+
+function notLoggedIn(req,res,next) {
+    if (!req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}
