@@ -47,4 +47,8 @@ See also the list of collaborators (https://github.com/piazzaana/chicken-fries/s
 
 ## License
 
+<<<<<<< HEAD:readme.md
 This project is licensed under the GPLv3 License - see the LICENSE.md (LICENSE.md) file for details
+=======
+This project is licensed under the GPLv3 License - see the LICENSE.md (LICENSE.md) file for details
+>>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6:readme.md

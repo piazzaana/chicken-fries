@@ -1,7 +1,11 @@
 A Quick Guide to GPLv3
  Brett Smith
 Free Software Foundation, Inc. licensing@fsf.org
+<<<<<<< HEAD
 Copyright 2007 Free Software Foundation, Inc.
+=======
+Copyright ⃝c 2007 Free Software Foundation, Inc.
+>>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
 Verbatim copying and distribution of this entire article are permitted worldwide, without royalty, in any medium, provided this notice is preserved.
 
 Introduction
@@ -38,8 +42,14 @@ New Compatible Licenses
 In addition to clarifying the rules about licenses that are already GPL-compatible, GPLv3 is also newly compatible with a few other licenses. The Apache License 2.0 is a prime example. Lots of great free software is available under this license, with strong communities surrounding it. We hope that this change in GPLv3 will foster more cooperation and sharing within the free software community. The chart below helps illustrate some common compatibility relationships between different free software licenses:
 Arrows pointing from one license to another indicate that the first license is compatible with the second. This is true even if you follow multiple arrows to get from one license to the other; so, for example, the ISC license is compatible with GPLv3. GPLv2 is compatible with GPLv3 if the program allows you to choose “any later version” of the GPL, which is the case for most software released under this license. This diagram is not comprehensive (see our licenses page for a more complete list of licenses compatible with GPLv2 and GPLv3), but plainly illustrates that GPLv3 is compatible with just about everything GPLv2 is, and then some.
 The GNU Affero GPL version 3 has also been brought into the fold. The original Affero GPL was designed to ensure that all users of a web application would be able to receive its source. The GNU Affero GPL version 3 broadens this goal: it is applicable to all network-interactive software, so it will also work well for programs like game servers. The additional provision is also more flexible, so that if someone uses AGPLed source in an application without a network interface, they’ll only have to provide source in the same sort of way the GPL has always required. By making these two licenses compatible, developers of network-interactive software will be able to strengthen their copyleft while still building on top of the mature body of GPLed code available to them.
+<<<<<<< HEAD
  
 More Ways for Developers to Provide Source One of the fundamental requirements of the GPL is that when you distribute object code to users, you must also provide them with a way to get the source. GPLv2 gave you a few ways to do this, and GPLv3 keeps those intact with some clarification. It also offers you new ways to provide source when you convey object code over a network. For instance, when you host object code on a web or FTP server, you can simply provide instructions that tell visitors how to get the source from a third-party server. Thanks to this new option, fulfilling this requirement should be easier for many small distributors who only make a few changes to large bodies of source.
+=======
+
+More Ways for Developers to Provide Source
+One of the fundamental requirements of the GPL is that when you distribute object code to users, you must also provide them with a way to get the source. GPLv2 gave you a few ways to do this, and GPLv3 keeps those intact with some clarification. It also offers you new ways to provide source when you convey object code over a network. For instance, when you host object code on a web or FTP server, you can simply provide instructions that tell visitors how to get the source from a third-party server. Thanks to this new option, fulfilling this requirement should be easier for many small distributors who only make a few changes to large bodies of source.
+>>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
 The new license also makes it much easier to convey object code via BitTorrent. First, people who are merely downloading or seeding the torrent are exempt from the license’s requirements for conveying the software. Then, whoever starts the torrent can provide source by simply telling other torrent users where it is available on a public network server.
 These new options help keep the GPL in line with community standards for offering source, without making it harder for users to get.
 Less Source to Distribute: New System Libraries Exception
@@ -57,4 +67,8 @@ Compliance with the GPL has always been the top priority of the FSF Compliance L
 The Latest and Greatest
 Some of these changes probably seem less important to you than others. That’s okay. Every project is different, and needs different things from its license. But odds are that a number of these improvements will help you and your work.
 And taken as a whole, all these upgrades represent something more: we made a better copyleft. It does more to protect users’ freedom, but it also enables more cooperation in the free software community. But updating the license is only part of the job: in order for people to get the benefits it offers, developers need to use GPLv3 for their projects, too. By releasing your own software under the new license, everyone who deals with it—users, other developers, distributors, even lawyers—will benefit. We hope you’ll use GPLv3 for your next release.
+<<<<<<< HEAD
 If you’d like to learn more about upgrading your project to GPLv3, the FSF Compliance Lab would be happy to assist you. On our web site, you can find basic instructions for using the license, and an FAQ addressing common concerns that people have about it. If your situation is more complicated than that, please contact us and we’ll do what we can to help you with your transition. Together, we can help protect freedom for all users.
+=======
+If you’d like to learn more about upgrading your project to GPLv3, the FSF Compliance Lab would be happy to assist you. On our web site, you can find basic instructions for using the license, and an FAQ addressing common concerns that people have about it. If your situation is more complicated than that, please contact us and we’ll do what we can to help you with your transition. Together, we can help protect freedom for all users.
+>>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6

@@ -10,4 +10,8 @@ let schema = new Schema({
     price:{type:Number, required:true},
 });
 
+<<<<<<< HEAD
 module.exports = mongoose.model('Breakfast', schema);
+=======
+module.exports = mongoose.model('Breakfast', schema);
+>>>>>>> 0c69d38ae2f6030c503ad41f6b525b68fbf3efb6
