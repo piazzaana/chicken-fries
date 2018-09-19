@@ -2,6 +2,9 @@
   "name": "chicken-fries",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node":"10.5.0"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
