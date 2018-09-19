@@ -92,4 +92,8 @@ router.get('/add-to-cart/dinner/:id', function (req, res, next) {
     });
 });
 
+router.get('/shopping-cart', function (req, res, next) {
+    res.render('shopping-cart');
+});
+
 module.exports = router;
