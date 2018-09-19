@@ -2,6 +2,7 @@ extends layout
 
 block content
     style(type='text/css').
+<<<<<<< HEAD
         form{
             font-family: 'Verdana', sans-serif;
         }
@@ -44,3 +45,29 @@ block content
 
 
     a(href='/') back to home page
+=======
+        button{
+            float: right;
+        }
+
+    div.card
+        div.card-header
+            h4 Contact us
+        div.card-body
+
+        form(method='POST' action='/contact')
+            div.form-group
+                label Name
+                input.form-control(type='text' placeholder='Your name')
+            div.form-group
+                label Email
+                input.form-control(type='email' placeholder='youremail@provider.com')
+            div.form-group
+                label Message
+                textarea.form-control(placeholder='your message')
+
+            button(type='submit') Send Message
+
+    div.redirect
+        a(href='/') back to home page
+>>>>>>> 5f01b950e8dc359311d8dc637cb5e46f38e787ce

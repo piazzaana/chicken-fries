@@ -1,6 +1,7 @@
 extends layout
 
 block content
+<<<<<<< HEAD
     h1=title
 
     h2 Our Story
@@ -10,4 +11,29 @@ block content
     p place an image and short bio about staff
 
     a(href='/') back to home page
+=======
+    style(type='text/css').
+        img{
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+    div.card.menu
+        div.card-img
+            img.img-fluid(src='./images/Manotel-Geneve-Restaurants.jpg')
+        divcard.card-body
+            h2 Our Story
+            p.card-text This is our story ...
+
+    div.card
+        div.card-img
+            img(src="./images/chef.jpg")
+        div.card-body
+            h2 Our Staff
+            p.card-text Say domething about this chef ...
+
+    div.redirect
+        a(href='/') back to home page
+>>>>>>> 5f01b950e8dc359311d8dc637cb5e46f38e787ce
 

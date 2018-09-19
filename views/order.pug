@@ -1,6 +1,7 @@
 extends layout
 
 block content
+<<<<<<< HEAD
     h1=title
 
     form.order-choice(method='POST' action='')
@@ -15,4 +16,29 @@ block content
 
     a(href='/') back to home page
 
+=======
+    style(type='text/css').
+        button a{
+            color: white;
+        }
+        button.pick-up,
+        button.delivery{
+            display: block;
+            width: 150px;
+            margin:10px auto;
+        }
+
+
+    div.card
+        div.card-header
+            h4 Place your order
+        div.card-body
+            button.pick-up
+                a(href='/users/pickup') Pick Up
+            button.delivery
+                a(href='/users/delivery') Delivery
+
+    div.redirect
+        a(href='/') back to home page
+>>>>>>> 5f01b950e8dc359311d8dc637cb5e46f38e787ce
 

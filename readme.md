@@ -47,4 +47,4 @@ See also the list of collaborators (https://github.com/piazzaana/chicken-fries/s
 
 ## License
 
-This project is licensed under the GPLv3 License - see the LICENSE.md (LICENSE.md) file for details
+This project is licensed under the GPLv3 License - see the [LICENSE.md](https://github.com/piazzaana/chicken-fries/blob/master/docs/LICENSE.md) file for details
