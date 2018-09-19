@@ -17,11 +17,6 @@ router.get('/logout', isLoggedIn, function (req, res, next) {
     res.redirect('/');
 });
 
-router.get('/order', isLoggedIn, function (req, res, next) {
-    //TODO add message to tell the customer that they need to sign in to access the order tab
-    res.render('order', {title: 'Order Page'});
-});
-
 router.use('/', notLoggedIn, function (req, res, next) {
     next();
 });
