@@ -1,7 +1,29 @@
 extends layout
 
 block content
-    div.row
-        div.card
-            div.card-header
-            div.card-body
+
+    div.card
+        div.card-header
+        div.card-body
+            ul.list-group
+                if foodItems
+                    each item in foodItems
+                        li.list-group-item
+                            h6=item.item.name
+                            span.btn.btn-success.disabled="$"+item.price+".00"
+                            div.btn-group
+                                button.btn.btn-primary.dropdown-toggle(data-toggle="dropdown") Action
+                                    span.caret
+                                        ul.dropdown-menu
+                                            li.text-center
+                                                a(href="#") reduce by 1
+                                            li.text-center
+                                                a(href="#") remove all
+                            span.badge.badge-dark.float-right=item.qty
+
+                            hr
+                    strong="Total: $"+totalPrice+".00"
+                            hr
+                            button.btn.btn-success Checkout
+                else
+                        button.btn.btn-success Your cart is empty
