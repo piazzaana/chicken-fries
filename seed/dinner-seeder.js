@@ -1,7 +1,7 @@
 const Dinner = require('../models/dinner');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/chicken-fries',{ useNewUrlParser: true });
+mongoose.connect('mongodb://admin:root01@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
 
 let DinnerItems = [
     new Dinner({
