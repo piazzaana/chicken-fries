@@ -5,6 +5,13 @@ block content
         button a{
             color: white;
         }
+        button.breakfast,
+        button.lunch,
+        button.dinner{
+            display: block;
+            width: 100%;
+            margin: 10px auto;
+        }
         button.pick-up,
         button.delivery{
             display: block;
@@ -17,10 +24,12 @@ block content
         div.card-header
             h4 Place your order
         div.card-body
-            button.pick-up
-                a(href='/users/pickup') Pick Up
-            button.delivery
-                a(href='/users/delivery') Delivery
+            button.breakfast
+                a(href='/breakfast') Breakfast
+            button.lunch
+                a(href='/lunch') Lunch
+            button.dinner
+                a(href='/dinner') Dinner
 
     div.redirect
         a(href='/') back to home page

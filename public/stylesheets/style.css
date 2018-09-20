@@ -4,20 +4,22 @@ html{
 }
 body {
   padding: 50px;
-  font: 16px "Comic Sans MS", Helvetica, Arial, sans-serif;
+  font: 20px "Comic Sans MS", Helvetica, Arial, sans-serif;
   background-color: #EEE8D5;
 }
+
+/*Navigation*/
 .navbar{
   background-color: #B91D3A;
 }
-.si-glyph-magnifier{
-  height: 30px;
-  width: auto;
+.navbar-brand{
+  text-align: center;
 }
-.navbar-toggler-icon{
-  height: 30px;
+button.navbar-toggler-icon{
   width: auto;
+  color: white;
 }
+
 main{
   margin-top: 50px;
 }
@@ -28,47 +30,73 @@ main{
   height: 220px;
   width: auto;
 }
-h1, h2, h3, h4{
+
+/*Headings*/
+h1, h2, h3, h4, h5{
   text-align: center;
 }
-form.order-choice{
-  margin-top: 20px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom: 50px;
-  background-color: #D3D0CA;
-  width: 30%;
 
-  padding-bottom: 10px;
-
-}
-form a{
-  color: white;
-  text-decoration: none;
-}
-div.header{
-  background-color: #B91D3A;
-  padding:10px;
-  color:white;
-}
-div.btns{
-  padding-top:10px;
-}
-button.pick-up,
-button.delivery,
-button.breakfast,
-button.lunch,
-button.dinner{
-  display:block;
-  background-color: #B91D3A;
-  color: white;
-  height: 70px;
-  width: 250px;
+/*Cards*/
+.card{
+  background-color: rgba(0, 0, 0, 0.20);
   border-radius: 10px;
-  margin:10px;
-  margin-left:auto;
-  margin-right:auto;
-  font-size: 24px;
+}
+.card-header{
+  background-color: #B91D3A;
+  color: white;
+}
+
+/*Menu Cards*/
+.card.menu{
+  display: inline-flex;
+  max-width: calc(100% / 3 - 10px);
+  height: 500px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+}
+.icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.price-add{
+  margin-top: 40px;
+}
+.price-add a{
+  color: white;
+}
+
+/*Redirect links*/
+div.redirect{
+  text-align: right;
+  margin: 50px;
+  font-size: 20px;
+}
+div.redirect a{
+  color: black;
+}
+div.redirect{
+  margin-right: 0;
+}
+
+/*Forms*/
+form{
+  font-family: "Verdana",sans-serif;
+  padding: 20px;
+}
+form label{
+  margin-bottom: 0;
+}
+
+/*Buttons*/
+button{
+  background-color: #B91D3A;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
 }
 footer{
   color: white;
@@ -83,6 +111,89 @@ footer{
 a {
   color: #00B7FF;
 }
-.navbar-brand{
+
+label > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 300;
+  line-height: 32px;
+  color: #000;
+  border-bottom: 1px solid #586A82;
+  transition: border-bottom-color 200ms ease-in-out;
+  cursor: text;
+  pointer-events: none;
+}
+label > span span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0% 50%;
+  transition: transform 200ms ease-in-out;
+  cursor: text;
+}
+label .field.is-focused + span span,
+label .field:not(.is-empty) + span span {
+  transform: scale(0.68) translateY(-36px);
+  cursor: default;
+}
+label .field.is-focused + span {
+  border-bottom-color: #34D08C;
+}
+.field {
+  background: transparent;
+  font-weight: 300;
+  border: 0;
+  color: #000;
+  outline: none;
+  cursor: text;
+  display: block;
+  width: 100%;
+  line-height: 32px;
+  padding-bottom: 3px;
+  transition: opacity 200ms ease-in-out;
+}
+.field::-webkit-input-placeholder {
+  color: #8898AA;
+}
+.field::-moz-placeholder {
+  color: #8898AA;
+}
+/* IE doesn't show placeholders when empty+focused */
+.field:-ms-input-placeholder {
+  color: #424770;
+}
+.field.is-empty:not(.is-focused) {
+  opacity: 0;
+}
+button:focus {
+  background: #24B47E;
+}
+button:active {
+  background: #159570;
+}
+.outcome {
+  float: left;
+  width: 100%;
+  padding-top: 8px;
+  min-height: 20px;
   text-align: center;
+}
+.success, .error {
+  display: none;
+  font-size: 15px;
+}
+.error.visible,.success.visible {
+  display: inline;
+}
+.error {
+  color: #E4584C;
+}
+.success {
+  color: #34D08C;
+  font-weight: 500;
+  font-size: 20px;
+  background-color: white;
 }
