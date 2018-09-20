@@ -56,7 +56,7 @@ function setOutcome(result) {
         // Use the token to create a charge or a customer
         // https://stripe.com/docs/charges
         console.log(result.token);
-        $form.append($('<input type="hidden" name="stripeToken">').val(result.token.id));
+        $form.append($('<input type="hidden" name="stripeToken" value=' + result.token.id + '>'));
         successElement.classList.add('visible');
         $form.get(0).submit();
     } else if (result.error) {
@@ -73,7 +73,7 @@ $form.submit(function(e) {
     e.preventDefault();
     let form = document.querySelector('form');
     let details = {
-        name: form.querySelector('input[name=cardholder-name]').value,
+        name: form.querySelector('input[name=name]').value,
     };
     stripe.createToken(card, details).then(setOutcome);
 });

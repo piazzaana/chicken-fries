@@ -25,9 +25,13 @@ block content
 
         form(action="/checkout" method="post"  id='checkout-form')
             label
-                input(name="cardholder-name" class="field is-empty" placeholder="Jane Doe")
+                input(name="name" class="field is-empty" placeholder="Jane Doe")
                 span
                     span Name
+            label
+                input(name="address" class="field is-empty" placeholder="21 Jump St")
+                span
+                    span Address
             label
                 div(id="card-element" class="field is-empty")
                 span

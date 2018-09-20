@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
 const Breakfast = require('../models/breakfast');
 const Lunch = require('../models/lunch');
 const Dinner = require('../models/dinner');
 const Cart = require('../models/cart');
+const Order = require('../models/order');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -118,18 +120,28 @@ router.post('/checkout', function (req, res, next) {
     stripe.charges.create({
         amount: cart.totalPrice * 100,
         currency: "usd",
-        source: req.body.stripeToken, // obtained with Stripe.js
-        description: "Test charge"
+        source: req.body.stripeToken[1], // obtained with Stripe.js
+        description: "Test charge",
     }, function(err, charge) {
         console.log("inside the create charges function");
         if (err){
             //res.flash('error', err.message);
-            next(err);
+            console.log(err);
         }
-        req.flash('success', 'Payment successful');
-        req.session.cart = null;
-        res.redirect('/');
+        console.log('CHARGE ', charge);
+        let order = new Order({
+            user: req.user,
+            cart: cart,
+            address: req.body.address,
+            name: req.body.name,
+            paymentId: charge.id
+        });
+        order.save(function (err, result) {
+            req.session.cart = null;
+            res.redirect('/');
+        });
     });
+    console.log(req.body);
 });
 
 module.exports = router;
