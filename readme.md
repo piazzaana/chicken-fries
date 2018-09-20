@@ -21,6 +21,10 @@ Place the files in an easy to access folder on your machine
 ```
 Desktop
 ```
+Open the sample.env file and rename it to .env
+Replace the ```<your username>``` and ```<your password>``` with your credentials
+
+
 Open your terminal window, point it to the folder you just downloaded and run the following command
 ```
 npm install
