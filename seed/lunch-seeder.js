@@ -1,7 +1,7 @@
 const Lunch = require('../models/lunch');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin:root01@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
+mongoose.connect(process.env.DB_HOST+'://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
 
 let LunchItems = [
     new Lunch({
