@@ -24,6 +24,7 @@ block content
                             hr
                     strong="Total: $"+totalPrice+".00"
                             hr
-                            button.btn.btn-success Checkout
+                            button.btn.btn-success
+                                a(href="/checkout") Checkout
                 else
-                        button.btn.btn-success Your cart is empty
+                        button.btn.btn-warning.disabled Your cart is empty
