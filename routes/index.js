@@ -21,14 +21,25 @@ router.get('/about', function (req, res, next) {
     res.render('about', {title: 'About us page'});
 });
 
-//get contact page
-router.get('/contact', function (req, res, next) {
-    res.render('contact');
+router.get('/order', function (req, res, next) {
+    res.render('order', {title: 'Order Page'});
 });
 
-//get location page
+router.get('/contact', function (req, res, next) {
+    res.render('contact', {title: 'Contact Us'});
+});
+
+router.get('/about', function (req, res, next) {
+    res.render('about', {title: 'About Us'});
+});
+
 router.get('/location', function (req, res, next) {
-    res.render('location',{title:'Location page'});
+    res.render('location', {title: 'Our Location'});
+});
+
+router.get('/login', function (req, res, next) {
+    res.render('login', {title: 'Login Page'});
+
 });
 
 //get breakfast menu page
