@@ -29,10 +29,16 @@ router.get('/signin', function (req, res, next) {
 
 //post route for user sign in
 router.post('/signin', passport.authenticate('local.signin',{
-    successRedirect:'/users/profile',
     failureRedirect: '/users/signin',
     failureFlash: true
-}));
+}), function (req, res, next) {
+    if(req.session.oldURL){
+        res.redirect(req.session.oldURL);
+        req.session.oldURL = null;
+    }else{
+        res.redirect('/users/profile');
+    }
+});
 
 //get user sign up page
 router.get('/signup', function (req, res, next) {
@@ -42,10 +48,16 @@ router.get('/signup', function (req, res, next) {
 
 //post rout for user sign up
 router.post('/signup', passport.authenticate('local.signup', {
-    successRedirect:'/users/profile',
     failureRedirect: '/users/signup',
     failureFlash: true
-}));
+}), function (req, res, next) {
+    if(req.session.oldURL){
+        res.redirect(req.session.oldURL);
+        req.session.oldURL = null;
+    }else{
+        res.redirect('/users/profile');
+    }
+});
 
 module.exports = router;
 
