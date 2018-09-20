@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 
-=======
-var express = require('express');
-var router = express.Router();
->>>>>>> 43627e90a06130e4f67535cd9a484c82a36d31a7
 const Breakfast = require('../models/breakfast');
 const Lunch = require('../models/lunch');
 const Dinner = require('../models/dinner');
