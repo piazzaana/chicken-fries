@@ -1,29 +1,89 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const csrf = require('csurf');
+const passport = require('passport');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+let Order = require('../models/order');
+let Cart = require('../models/cart');
+
+let csrfProtection = csrf();
+router.use(csrfProtection);
+
+//get user profile page
+router.get('/profile', isLoggedIn, function (req, res, next) {
+    Order.find({user: req.user}, function (err, orders) {
+        if(err){
+            res.write('Error!');
+        }
+        let cart;
+        orders.forEach(function (order) {
+            cart = new Cart(order.cart);
+            order.items = cart.generateArray();
+        });
+        res.render('user/profile', {title: 'User profile', orders: orders});
+    });
 });
 
-//get pick up order page //make it a user route
-router.get('/pickup', function (req, res, next) {
-    res.render('pickup', {title:'Pickup'});
+//get loug out route
+router.get('/logout', isLoggedIn, function (req, res, next) {
+    req.logout();
+    res.redirect('/');
 });
 
-//get delivery order page //make it a user route
-router.get('/delivery', function (req, res, next) {
-    res.render('delivery', {title:'Delivery'});
+router.use('/', notLoggedIn, function (req, res, next) {
+    next();
 });
 
-//make it a user route
-router.get('/order', function (req, res, next) {
-    res.render('order', {title: 'Order Page'});
+//get user sign in page
+router.get('/signin', function (req, res, next) {
+    let messages = req.flash('error');
+    res.render('user/signin', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
 
-//make it a user route
-router.get('/login', function (req, res, next) {
-    res.render('login', {title: 'Login Page'});
+//post route for user sign in
+router.post('/signin', passport.authenticate('local.signin',{
+    failureRedirect: '/users/signin',
+    failureFlash: true
+}), function (req, res, next) {
+    if(req.session.oldURL){
+        res.redirect(req.session.oldURL);
+        req.session.oldURL = null;
+    }else{
+        res.redirect('/users/profile');
+    }
+});
+
+//get user sign up page
+router.get('/signup', function (req, res, next) {
+    let messages = req.flash('error');
+    res.render('user/signup', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
+});
+
+//post rout for user sign up
+router.post('/signup', passport.authenticate('local.signup', {
+    failureRedirect: '/users/signup',
+    failureFlash: true
+}), function (req, res, next) {
+    if(req.session.oldURL){
+        res.redirect(req.session.oldURL);
+        req.session.oldURL = null;
+    }else{
+        res.redirect('/users/profile');
+    }
 });
 
 module.exports = router;
+
+function isLoggedIn(req,res,next) {
+    if (req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}
+
+function notLoggedIn(req,res,next) {
+    if (!req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}

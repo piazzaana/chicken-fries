@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1=title
+    hr
+    h2 My orders
+    each order in orders
+        div.card
+            div.card-header
+            div.card-body
+                ul.list-group
+                    each item in order.cart
+                        li.list-group-item.d-flex.justify-content-between.align-items-center=item.title
+                            span.badge.badge-dark=item.price
+            div.card-footer
+                h3.float-right="Total: $"+order.cart.totalPrice+".00"

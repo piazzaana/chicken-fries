@@ -1,8 +1,8 @@
-#!/usr/bin/env node
+var NODE_ENV = process.env.NODE_ENV || 'development'
 
-/**
- * Module dependencies.
- */
+if(NODE_ENV === 'development'){
+    require('dotenv').load();
+}
 
 let app = require('../app');
 let debug = require('debug')('chicken-fries:server');
