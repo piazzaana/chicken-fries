@@ -67,7 +67,6 @@ function setOutcome(result) {
 card.on('change', function(event) {
     setOutcome(event);
 });
-
 $form.submit(function(e) {
     e.preventDefault();
     let form = document.querySelector('form');
