@@ -55,7 +55,6 @@ function setOutcome(result) {
     if (result.token) {
         // Use the token to create a charge or a customer
         // https://stripe.com/docs/charges
-        console.log(result.token);
         $form.append($('<input type="hidden" name="stripeToken" value=' + result.token.id + '>'));
         successElement.classList.add('visible');
         $form.get(0).submit();

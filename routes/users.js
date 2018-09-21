@@ -1,17 +1,30 @@
-var express = require('express');
-var router = express.Router();
-var csrf = require('csurf');
-var passport = require('passport');
+const express = require('express');
+const router = express.Router();
+const csrf = require('csurf');
+const passport = require('passport');
 
-var csrfProtection = csrf();
+let Order = require('../models/order');
+let Cart = require('../models/cart');
+
+let csrfProtection = csrf();
 router.use(csrfProtection);
 
 //get user profile page
 router.get('/profile', isLoggedIn, function (req, res, next) {
-    res.render('user/profile', {title: 'User profile'});
+    Order.find({user: req.user}, function (err, orders) {
+        if(err){
+            res.write('Error!');
+        }
+        let cart;
+        orders.forEach(function (order) {
+            cart = new Cart(order.cart);
+            order.items = cart.generateArray();
+        });
+        res.render('user/profile', {title: 'User profile', orders: orders});
+    });
 });
 
-//get lougout route
+//get loug out route
 router.get('/logout', isLoggedIn, function (req, res, next) {
     req.logout();
     res.redirect('/');

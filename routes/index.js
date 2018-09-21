@@ -136,7 +136,6 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
     }, function(err, charge) {
         console.log("inside the create charges function");
         if (err){
-            //res.flash('error', err.message);
             console.log(err);
         }
         console.log('CHARGE ', charge);
