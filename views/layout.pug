@@ -13,15 +13,18 @@ html(lang='en')
   body
     header
       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
-        a.navbar-brand(href="/") Chicken & Fries
+        a.navbar-brand(href="/")
+          img.logo(src='images/logo.png')
         button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
           span.navbar-toggler-icon
         div.collapse.navbar-collapse(id='navbarSupportedContent')
           ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link(href="/") Home
-            li.nav-item
-              a.nav-link(href="/order") Order
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Our Menus
+              div.dropdown-menu(aria-labelledby="navbarDropdown")
+                a.dropdown-item(href="/breakfast") Breakfast
+                a.dropdown-item(href="/lunch") Lunch
+                a.dropdown-item(href="/dinner") Dinner
             li.nav-item
               a.nav-link(href="/about") About
             li.nav-item
@@ -36,7 +39,7 @@ html(lang='en')
 
             li.nav-item.dropdown
               a.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-                <i class="fas fa-user"></i> User Management
+                <i class="fas fa-user"></i> Sign in
               div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
                 if login
                   a.dropdown-item(href="/users/profile") Profile
@@ -47,9 +50,8 @@ html(lang='en')
 
                   a.dropdown-item(href="/users/signin") Sign in
     main
-      div.container
-        block content
-
+      p main content
+    block content
     footer Ana Cristina Piazza - WAI - Full Sail University
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
