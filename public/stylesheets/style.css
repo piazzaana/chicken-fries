@@ -3,6 +3,7 @@ html{
   min-height: 100%;
 }
 body {
+  margin-top: 50px;
   padding: 50px;
   font: 20px "Comic Sans MS", Helvetica, Arial, sans-serif;
   background-color: #EEE8D5;
