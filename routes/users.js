@@ -13,8 +13,9 @@ router.use(csrfProtection);
 router.get('/profile', isLoggedIn, function (req, res, next) {
     Order.find({user: req.user}, function (err, orders) {
         if(err){
-            res.write('Error!');
+            console.log('Error!');
         }
+        // console.log(orders);
         let cart;
         orders.forEach(function (order) {
             cart = new Cart(order.cart);

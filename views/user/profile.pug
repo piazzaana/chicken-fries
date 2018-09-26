@@ -1,16 +1,15 @@
 extends ../layout
-
 block content
     h1=title
     hr
-    h2 My orders
+    h2 My order history
     each order in orders
-        div.card
-            div.card-header
+        div.card(style="margin-bottom:10px")
             div.card-body
                 ul.list-group
-                    each item in order.cart
-                        li.list-group-item.d-flex.justify-content-between.align-items-center=item.title
-                            span.badge.badge-dark=item.price
+                    each item in order.cart.items
+                        li.list-group-item.d-flex.justify-content-between.align-items-center=item.item.name
+                            span="quantity "+item.qty
+                            span.badge.badge-dark="$"+item.price+".00"
             div.card-footer
-                h3.float-right="Total: $"+order.cart.totalPrice+".00"
+                h5.float-right="Total: $"+order.cart.totalPrice+".00"
