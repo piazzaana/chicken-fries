@@ -9,65 +9,50 @@ html(lang='en')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
   body
     header
       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
-        a.navbar-brand(href="/") Chicken & Fries
+        a.navbar-brand(href="/")
+          img.logo(src='images/logo.png')
         button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
           span.navbar-toggler-icon
         div.collapse.navbar-collapse(id='navbarSupportedContent')
           ul.navbar-nav.ml-auto
-            li.nav-item.active
-              a.nav-link(href="/") Home
-            li.nav-item
-              a.nav-link(href="/users/order") Order
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Our Menus
+              div.dropdown-menu(aria-labelledby="navbarDropdown")
+                a.dropdown-item(href="/breakfast") Breakfast
+                a.dropdown-item(href="/lunch") Lunch
+                a.dropdown-item(href="/dinner") Dinner
             li.nav-item
               a.nav-link(href="/about") About
             li.nav-item
               a.nav-link(href="/contact") Contact
             li.nav-item
               a.nav-link(href="/location") Location
-            ul.nav.navbar-nav.flex-row.justify-content-between
-              li.nav-item.order-2.order-md-1
-                a.nav-link(href="#" title="settings")
-                  i.fa.fa-cog.fa-fw.fa-lg
-              li.dropdown.order-1
-                button.btn.btn-outline-secondary.dropdown-toggle(type="button" id="dropdownMenu1" data-toggle="dropdown") Login
-                span.caret
-                  ul.dropdown-menu.dropdown-menu-right.mt-1
-                    li.px-3.py-2
-                      form.form(role="form" method="POST" action="/login")
-                        div.form-group
-                          input.form-control(id="emailInput" placeholder="Email" type="text" required="")
-                        div.form-group
-                          input.form-control(id="passwordInput" placeholder="Password" type="text" required="")
-                        div.form-group
-                          button.btn.btn-primary.btn-block(type="submit") Login
-                        div.form-group.text-center
-                          small
-                            a(href="#" data-toggle="modal" data-target="#modal") Forgot password?
-                            div()
-                              p(style="margin-bottom:0;") Don't have an account?
-                              a(href="/register") Register
-            div.modal.fade#modal(tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true")
-              div.modal-dialog(role="document")
-                div.modal-content
-                  div.modal-header
-                    h5.modal-title(id="exampleModal3Label") Modal title
-                    button.close(type="button" data-dismiss="modal" aria-label="Close")
-                      span(aria-hidden="true") &times;
-                  div.modal-body
-                    h1 Modal Window Body
-                  div.modal-footer
-                    button.btn.btn-secondary(type="button" data-dismiss="modal") Close
-                    button.btn.btn-primary(type="button") Save changes
+            li.nav-item
+              a.nav-link(href="/shopping-cart")
+                <i class="fas fa-shopping-cart"></i> Shopping cart
+                if session.cart
+                  span.badge.badge-dark(style='margin-left:5px')=session.cart.totalQty
 
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                <i class="fas fa-user"></i> Sign in
+              div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                if login
+                  a.dropdown-item(href="/users/profile") Profile
+
+                  a.dropdown-item(href="/users/logout") Logout
+                else
+                  a.dropdown-item(href="/users/signup") Sign up
+
+                  a.dropdown-item(href="/users/signin") Sign in
     main
-      block content
+    block content
 
     footer Ana Cristina Piazza - WAI - Full Sail University
 
-    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')

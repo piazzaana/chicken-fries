@@ -3,6 +3,7 @@ html{
   min-height: 100%;
 }
 body {
+  margin-top: 50px;
   padding: 50px;
   font: 20px "Comic Sans MS", Helvetica, Arial, sans-serif;
   background-color: #EEE8D5;
@@ -11,24 +12,29 @@ body {
 /*Navigation*/
 .navbar{
   background-color: #B91D3A;
+  font-size: 22px;
 }
 .navbar-brand{
   text-align: center;
+}
+.navbar-brand img{
+  height: 100px;
+  width: auto;
+  margin-left: 10px;
 }
 button.navbar-toggler-icon{
   width: auto;
   color: white;
 }
-
+a.nav-link:hover{
+  background-color: #DFA032;
+  border-radius: 10px;
+}
 main{
   margin-top: 50px;
 }
-.logo{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 220px;
-  width: auto;
+.welcome{
+  color: white;
 }
 
 /*Headings*/
@@ -50,7 +56,7 @@ h1, h2, h3, h4, h5{
 .card.menu{
   display: inline-flex;
   max-width: calc(100% / 3 - 10px);
-  height: 500px;
+  height: auto;
   margin: 5px;
   border: none;
   border-radius: 10px;
