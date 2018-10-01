@@ -70,6 +70,7 @@ Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issu
 ### Information Architecture
 
 ### Browser Support
+* Chrome (Version 69.0.3497.100 +)
 
 ## Infrastructure
 Subject | Technology
