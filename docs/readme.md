@@ -46,7 +46,7 @@ To build an application where the customer can view the available menus and orde
 Build a web application that can handle order and payment online and give the customer a approximate 'ready time', so the customer knows when the food will be ready and can take care of their busy lives while they wait for the food.
 
 ## Pitch
-We know you are hungry! We'll take care of the food for you.
+[Pitch Video](https://www.youtube.com/watch?v=ymOAJD-CXl0&feature=youtu.be)
 
 # Spec
 
