@@ -40,7 +40,7 @@ The audience for this particular fast food restaurant would be adults between th
 The problem that this audience have is time. They have a busy lifestyle, not much time to cook or to be hanging on the phone ordering food. They want good, affordable, and fast food.
 
 ## Solution
-The solution will be a online food ordering system.
+To build an application where the customer can view the available menus and order their food and pay for it online so they can skip the waiting in line time and come back when their food is ready so they can just pick it up and go,
 
 ## Unique Value Proposition
 Build a web application that can handle order and payment online and give the customer a approximate 'ready time', so the customer knows when the food will be ready and can take care of their busy lives while they wait for the food.
