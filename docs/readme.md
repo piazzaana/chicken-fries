@@ -68,6 +68,22 @@ Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issu
 ## Interface
 
 ### Information Architecture
+* Home - Banner with business slogan
+* Our Menus - Links to menus
+* Breakfast - Breakfast menu
+* Lunch - Lunch menu
+* Dinner - Dinner menu
+* About - Images of the restaurant and staff along with information about the images
+* Contact - Contact form
+* Location - A map with the address of the restaurant and the phone number
+* Shopping Cart - A list of items added to the cart
+* Action - Links to remove one item or remove all items
+* Checkout - A payment form
+* Sign in (tab) - Links to either sign in or sign up
+* Sign in - A sign in form
+* Sign up - A sign up form
+* Profile - A order history from the customer
+* Logout - Will redirect the user to the home page
 
 ### Browser Support
 * macOS (High Sierra) Chrome (Version 69.0.3497.100 +)
@@ -110,10 +126,10 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 [Pivot]()
 
 ## Alpha Release
-[Alpha Release]()
+Due - October 6th
 
 ## Beta Release
-Due - September 15th
+Due - October 13th
 
 ## Public Release
-Due - September 20th
+Due - October 18th
