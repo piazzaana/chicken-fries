@@ -8,48 +8,48 @@ const Cart = require('../models/cart');
 const Order = require('../models/order');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
     res.render('index', { title: 'Welcome to Chicken & Fries' });
 });
 
-router.get('/order', function (req, res, next) {
+router.get('/order', (req, res, next) => {
     res.render('order', {title: 'Order Page'});
 });
 
 // get about page
-router.get('/about', function (req, res, next) {
+router.get('/about', (req, res, next) => {
     res.render('about', {title: 'About us page'});
 });
 
-router.get('/order', function (req, res, next) {
+router.get('/order', (req, res, next) => {
     res.render('order', {title: 'Order Page'});
 });
 
-router.get('/contact', function (req, res, next) {
+router.get('/contact', (req, res, next) => {
     res.render('contact', {title: 'Contact Us'});
 });
 
-router.get('/about', function (req, res, next) {
+router.get('/about', (req, res, next) => {
     res.render('about', {title: 'About Us'});
 });
 
-router.get('/location', function (req, res, next) {
+router.get('/location', (req, res, next) => {
     res.render('location', {title: 'Our Location'});
 });
 
-router.get('/login', function (req, res, next) {
+router.get('/login', (req, res, next) => {
     res.render('login', {title: 'Login Page'});
 
 });
 
 //get breakfast menu page
-router.get('/breakfast', function (req, res, next) {
+router.get('/breakfast', (req, res, next) => {
     Breakfast.find(function (err, docs) {
         res.render('menus/breakfast', {title: 'Breakfast Menu', breakfast: docs});
     });
 });
 
-router.get('/add-to-cart/breakfast/:id', function (req, res, next) {
+router.get('/add-to-cart/breakfast/:id', (req, res, next) => {
     let bfItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
     Breakfast.findById(bfItemId, function (err, bfItem) {
@@ -64,16 +64,16 @@ router.get('/add-to-cart/breakfast/:id', function (req, res, next) {
 });
 
 //get lunch page
-router.get('/lunch', function (req, res, next) {
+router.get('/lunch', (req, res, next) => {
     Lunch.find(function (err, docs) {
         res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
     });
 });
 
-router.get('/add-to-cart/lunch/:id', function (req, res, next) {
+router.get('/add-to-cart/lunch/:id', (req, res, next) => {
     let lunchItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Lunch.findById(lunchItemId, function (err, lunchItem) {
+    Lunch.findById(lunchItemId, (err, lunchItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
@@ -85,16 +85,16 @@ router.get('/add-to-cart/lunch/:id', function (req, res, next) {
 });
 
 //get dinner menu
-router.get('/dinner', function (req, res, next) {
-    Dinner.find(function (err, docs) {
+router.get('/dinner', (req, res, next) => {
+    Dinner.find((err, docs) => {
         res.render('menus/dinner', {title:'Dinner Menu', dinner:docs});
     });
 });
 
-router.get('/add-to-cart/dinner/:id', function (req, res, next) {
+router.get('/add-to-cart/dinner/:id', (req, res, next) => {
     let dinnerItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Dinner.findById(dinnerItemId, function (err, dinnerItem) {
+    Dinner.findById(dinnerItemId, (err, dinnerItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
@@ -105,7 +105,7 @@ router.get('/add-to-cart/dinner/:id', function (req, res, next) {
     });
 });
 
-router.get('/shopping-cart', function (req, res, next) {
+router.get('/shopping-cart', (req, res, next) => {
     if(!req.session.cart){
         return res.render('shopping-cart',{foodItems: null});
     }
@@ -113,7 +113,7 @@ router.get('/shopping-cart', function (req, res, next) {
     res.render('shopping-cart', {foodItems: cart.generateArray(), totalPrice: cart.totalPrice})
 });
 
-router.get('/checkout', isLoggedIn, function (req, res, next) {
+router.get('/checkout', isLoggedIn, (req, res, next) => {
     if(!req.session.cart){
         return res.redirect('/shopping-cart');
     }
@@ -121,7 +121,7 @@ router.get('/checkout', isLoggedIn, function (req, res, next) {
     res.render('checkout',{total: cart.totalPrice});
 });
 
-router.post('/checkout', isLoggedIn, function (req, res, next) {
+router.post('/checkout', isLoggedIn, (req, res, next) => {
     if(!req.session.cart){
         return res.redirect('/shopping-cart');
     }
@@ -133,7 +133,7 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
         currency: "usd",
         source: req.body.stripeToken[1], // obtained with Stripe.js
         description: "Test charge",
-    }, function(err, charge) {
+    }, (err, charge) => {
         console.log("inside the create charges function");
         if (err){
             console.log(err);
@@ -146,7 +146,7 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
             name: req.body.name,
             paymentId: charge.id
         });
-        order.save(function (err, result) {
+        order.save((err, result) => {
             req.session.cart = null;
             res.redirect('/');
         });
