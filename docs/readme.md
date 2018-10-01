@@ -105,6 +105,8 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 * Stripe
 
 ### Deployment Workflow
+New features are introduced to the develop branch, once a push is made on the develop branch, it is automatically deployed to the [staging server](https://chicken-fries-staging.herokuapp.com/).
+Once approved, these changes will be pushed into the master branch, which is also automatically deployed to the [live server](https://chicken-fries.herokuapp.com/).
 
 ### Web Host
 [Production/Live](https://chicken-fries.herokuapp.com/)
