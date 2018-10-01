@@ -86,6 +86,7 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 * MongoDB
 
 ### Integrations
+* Stripe
 
 ### Deployment Workflow
 
