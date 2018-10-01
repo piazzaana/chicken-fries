@@ -2,11 +2,11 @@ const passport = require('passport');
 const User = require('../models/user');
 const LocalStrategy = require('passport-local').Strategy;
 
-passport.serializeUser(function (user, done) {
+passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
+passport.deserializeUser((id, done) => {
     User.findById(id, function (err, user) {
         done(err, user);
     });
@@ -16,7 +16,7 @@ passport.use('local.signup', new LocalStrategy({
     usernameField:'email',
     passwordField:'password',
     passReqToCallback:true
-}, function (req,email,password,done) {
+}, (req,email,password,done) => {
     req.checkBody('email', 'Invalid email').notEmpty().isEmail();
     req.checkBody('password', 'Invalid Password').notEmpty().isLength({min:3});
     let errors = req.validationErrors();
@@ -27,7 +27,7 @@ passport.use('local.signup', new LocalStrategy({
         });
         return done(null, false, req.flash('error', messages));
     }
-    User.findOne({'email':email}, function (err, user) {
+    User.findOne({'email':email}, (err, user) => {
         if (err){
             return done(err);
         }
@@ -50,18 +50,18 @@ passport.use('local.signin', new LocalStrategy({
     usernameField:'email',
     passwordField:'password',
     passReqToCallback:true
-}, function (req, email, password, done) {
+}, (req, email, password, done) => {
     req.checkBody('email', 'Invalid email').notEmpty().isEmail();
     req.checkBody('password', 'Invalid Password').notEmpty();
     let errors = req.validationErrors();
     if(errors){
         let messages = [];
-        errors.forEach(function (error) {
+        errors.forEach( (error) => {
             messages.push(error.msg);
         });
         return done(null, false, req.flash('error', messages));
     }
-    User.findOne({'email':email}, function (err, user) {
+    User.findOne({'email':email}, (err, user) => {
         if (err){
             return done(err);
         }
