@@ -11,7 +11,7 @@ const validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 
 //set up database connection
-mongoose.connect(process.env.DB_HOST+'://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
+mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true});
 require('./config/passport');
 
 let db = mongoose.connection;
