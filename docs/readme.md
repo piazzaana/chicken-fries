@@ -31,7 +31,7 @@
     * [Public release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#public-release)
 
 # Brief
-On this brief I will go through the audience, the problem, the solution, my unique value proposition, and pitch. I'll identify the audience and the problem, will come up with a solution using my unique value proposition, and will deliver a pitch.
+The Chicken & Fries customers currently does not have a online ordering system in place. This food ordering app seeks to lower the waiting in line time for their customers by providing a way for the customers to order their food online and have and approximate 'ready' time so they can skip the line.
 
 ## Audience
 The audience for this particular fast food restaurant would be adults between the ages of 18 – 50 years old, who work all day and don’t have much time to cook, they would not spend more than $50 on a meal and, for most part they would be single or live with a partner, not necessarily married, and have no children. 
