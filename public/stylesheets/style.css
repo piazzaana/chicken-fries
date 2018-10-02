@@ -67,6 +67,9 @@ h1, h2, h3, h4, h5{
   align-items: flex-end;
   margin-top: 30px;
 }
+a.fav{
+  color: black;
+}
 .price-add{
   margin-top: 40px;
 }

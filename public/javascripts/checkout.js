@@ -1,3 +1,4 @@
+console.log('loaded checkout.js');
 const stripe = Stripe('pk_test_CLZ4lDLNcpuzMOo9DPXBEBD8');
 const elements = stripe.elements();
 let $form = $('#checkout-form');
@@ -29,7 +30,7 @@ let card = elements.create('card', {
 });
 card.mount('#card-element');
 
-var inputs = document.querySelectorAll('input.field');
+const inputs = document.querySelectorAll('input.field');
 Array.prototype.forEach.call(inputs, (input) => {
     input.addEventListener('focus', function() {
         input.classList.add('is-focused');

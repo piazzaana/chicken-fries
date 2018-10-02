@@ -1,7 +1,6 @@
 extends ../layout
 
 block content
-    style(type='text/css').
 
     h1=title
     p=message
@@ -13,8 +12,7 @@ block content
                     h5.card-title=items.name
                     div.icons
                         i.fas.fa-utensils=' - '+items.servingSize
-                        a(href='#')
-                            i.far.fa-heart
+                        i.far.fa-heart
                     div.price-add.clearfix
                         button.disabled.float-left
                             p.card-text.price='$' + items.price + '.00'
@@ -22,3 +20,4 @@ block content
                             a(href="/add-to-cart/breakfast/" + items._id) Add to cart
         div.redirect
             a(href='/order') Chose another menu
+    script(src='javascripts/favorites.js')
