@@ -11,7 +11,7 @@ const validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 
 //set up database connection
-mongoose.connect(process.env.DB_HOST+'://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
+mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true});
 require('./config/passport');
 
 let db = mongoose.connection;
@@ -20,9 +20,7 @@ let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
 //bind connection to connection event
-db.once('open', function () {
-    console.log('DATABASE CONNECTED SUCCESSFULLY');
-});
+db.once('open', () => console.log('DATABASE CONNECTED SUCCESSFULLY'));
 
 
 const indexRouter = require('./routes/index');
@@ -51,7 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.locals.login = req.isAuthenticated();
     res.locals.session = req.session;
     next();
@@ -61,12 +59,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
