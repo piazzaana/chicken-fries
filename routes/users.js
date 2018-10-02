@@ -15,7 +15,6 @@ router.get('/profile', isLoggedIn, (req, res, next) => {
         if(err){
             console.log('Error!');
         }
-        // console.log(orders);
         let cart;
         orders.forEach((order) => {
             cart = new Cart(order.cart);
