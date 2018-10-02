@@ -56,7 +56,7 @@ router.get('/lunch', (req, res, next) => {
 router.get('/add-to-cart/lunch/:id', (req, res, next) => {
     let lunchItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Lunch.findById(lunchItemId, function (err, lunchItem) {
+    Lunch.findById(lunchItemId, (err, lunchItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
@@ -69,7 +69,7 @@ router.get('/add-to-cart/lunch/:id', (req, res, next) => {
 
 //get dinner menu
 router.get('/dinner', (req, res, next) => {
-    Dinner.find(function (err, docs) {
+    Dinner.find((err, docs) => {
         res.render('menus/dinner', {title:'Dinner Menu', dinner:docs});
     });
 });
@@ -77,7 +77,7 @@ router.get('/dinner', (req, res, next) => {
 router.get('/add-to-cart/dinner/:id', (req, res, next) => {
     let dinnerItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Dinner.findById(dinnerItemId, function (err, dinnerItem) {
+    Dinner.findById(dinnerItemId, (err, dinnerItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
@@ -116,7 +116,7 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
         currency: "usd",
         source: req.body.stripeToken[1], // obtained with Stripe.js
         description: "Test charge",
-    }, function(err, charge) {
+    }, (err, charge) => {
         console.log("inside the create charges function");
         if (err){
             console.log(err);
@@ -129,7 +129,7 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
             name: req.body.name,
             paymentId: charge.id
         });
-        order.save(function (err, result) {
+        order.save((err, result) => {
             req.session.cart = null;
             res.redirect('/');
         });
