@@ -6,18 +6,18 @@ const passport = require('passport');
 let Order = require('../models/order');
 let Cart = require('../models/cart');
 
-let csrfProtection = csrf();
-router.use(csrfProtection);
+let routeProtection = csrf();
+router.use(routeProtection);
 
 //get user profile page
-router.get('/profile', isLoggedIn, function (req, res, next) {
-    Order.find({user: req.user}, function (err, orders) {
+router.get('/profile', isLoggedIn, (req, res, next) => {
+    Order.find({user: req.user}, (err, orders) => {
         if(err){
             console.log('Error!');
         }
         // console.log(orders);
         let cart;
-        orders.forEach(function (order) {
+        orders.forEach((order) => {
             cart = new Cart(order.cart);
             order.items = cart.generateArray();
         });
@@ -26,17 +26,17 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
 });
 
 //get loug out route
-router.get('/logout', isLoggedIn, function (req, res, next) {
+router.get('/logout', isLoggedIn, (req, res, next) => {
     req.logout();
     res.redirect('/');
 });
 
-router.use('/', notLoggedIn, function (req, res, next) {
+router.use('/', notLoggedIn, (req, res, next) => {
     next();
 });
 
 //get user sign in page
-router.get('/signin', function (req, res, next) {
+router.get('/signin', (req, res, next) => {
     let messages = req.flash('error');
     res.render('user/signin', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
@@ -45,7 +45,7 @@ router.get('/signin', function (req, res, next) {
 router.post('/signin', passport.authenticate('local.signin',{
     failureRedirect: '/users/signin',
     failureFlash: true
-}), function (req, res, next) {
+}), (req, res, next) => {
     if(req.session.oldURL){
         res.redirect(req.session.oldURL);
         req.session.oldURL = null;
@@ -55,7 +55,7 @@ router.post('/signin', passport.authenticate('local.signin',{
 });
 
 //get user sign up page
-router.get('/signup', function (req, res, next) {
+router.get('/signup', (req, res, next) => {
     let messages = req.flash('error');
     res.render('user/signup', {csrfToken: req.csrfToken(), messages:messages, hasErrors: messages.length>0});
 });
@@ -64,7 +64,7 @@ router.get('/signup', function (req, res, next) {
 router.post('/signup', passport.authenticate('local.signup', {
     failureRedirect: '/users/signup',
     failureFlash: true
-}), function (req, res, next) {
+}), (req, res, next) => {
     if(req.session.oldURL){
         res.redirect(req.session.oldURL);
         req.session.oldURL = null;
