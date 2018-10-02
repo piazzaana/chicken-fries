@@ -41,14 +41,13 @@ router.get('/add-to-cart/breakfast/:id', (req, res, next) => {
         }
         cart.add(bfItem, bfItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/breakfast');
     });
 });
 
 //get lunch page
 router.get('/lunch', (req, res, next) => {
-    Lunch.find(function (err, docs) {
+    Lunch.find((err, docs) => {
         res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
     });
 });
@@ -62,7 +61,6 @@ router.get('/add-to-cart/lunch/:id', (req, res, next) => {
         }
         cart.add(lunchItem, lunchItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/lunch');
     });
 });
@@ -83,7 +81,6 @@ router.get('/add-to-cart/dinner/:id', (req, res, next) => {
         }
         cart.add(dinnerItem, dinnerItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/dinner');
     });
 });
@@ -117,11 +114,9 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
         source: req.body.stripeToken[1], // obtained with Stripe.js
         description: "Test charge",
     }, (err, charge) => {
-        console.log("inside the create charges function");
         if (err){
             console.log(err);
         }
-        console.log('CHARGE ', charge);
         let order = new Order({
             user: req.user,
             cart: cart,
@@ -134,7 +129,6 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
             res.redirect('/');
         });
     });
-    console.log(req.body);
 });
 
 module.exports = router;
