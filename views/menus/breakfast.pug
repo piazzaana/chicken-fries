@@ -1,7 +1,6 @@
 extends ../layout
 
 block content
-    style(type='text/css').
 
     h1=title
     p=message
@@ -21,3 +20,4 @@ block content
                             a(href="/add-to-cart/breakfast/" + items._id) Add to cart
         div.redirect
             a(href='/order') Chose another menu
+    script(src='javascripts/favorites.js')
