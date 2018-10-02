@@ -1,4 +1,5 @@
 console.log('loaded favorites.js');
+//adding a simple comment so I can create the PR
 let fav = $('.far.fa-heart');
 for (let i = 0; i < fav.length; i++){
     fav[i].addEventListener('click', function () {
