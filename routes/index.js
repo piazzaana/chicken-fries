@@ -61,7 +61,6 @@ router.get('/add-to-cart/lunch/:id', (req, res, next) => {
         }
         cart.add(lunchItem, lunchItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/lunch');
     });
 });
@@ -82,7 +81,6 @@ router.get('/add-to-cart/dinner/:id', (req, res, next) => {
         }
         cart.add(dinnerItem, dinnerItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/dinner');
     });
 });
