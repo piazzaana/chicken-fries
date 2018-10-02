@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    style(type='text/css').
+
+    h1=title
+    p=message
+    ul
+        each items in breakfast
+            div.card.menu
+                img.card-img-top(src=items.imagePath)
+                div.card-body
+                    h5.card-title=items.name
+                    div.icons
+                        i.fas.fa-utensils=' - '+items.servingSize
+                        i.far.fa-heart
+                    div.price-add.clearfix
+                        button.disabled.float-left
+                            p.card-text.price='$' + items.price + '.00'
+                        button.float-right
+                            a(href="/add-to-cart/breakfast/" + items._id) Add to cart
+        div.redirect
+            a(href='/order') Chose another menu

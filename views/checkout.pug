@@ -1,4 +1,45 @@
 extends layout
 
 block content
-    h1 Checkout Page
+    style(type='text/css').
+        * {
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 19px;
+            font-variant: normal;
+            padding: 0;
+            margin: 0;
+        }
+        label {
+            height: 35px;
+            position: relative;
+            color: #8798AB;
+            display: block;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+    div.container
+        div.card
+            div.card-header
+                h5(style="margin-bottom:0;") Payment Form
+
+        form(action="/checkout" method="post"  id='checkout-form')
+            label
+                input(name="name" class="field is-empty" placeholder="Jane Doe")
+                span
+                    span Name
+            label
+                input(name="address" class="field is-empty" placeholder="21 Jump St")
+                span
+                    span Address
+            label
+                div(id="card-element" class="field is-empty")
+                span
+                    span Credit or debit card
+            input(type="hidden" name="stripeToken")
+            button(style="margin-top:20px")="Pay $" + total + ".00"
+        div(class="outcome")
+            div(class="error" role="alert")
+            div(class="success") Success! Your payment has been submitted
+    script(src="https://js.stripe.com/v3/")
+    script(src="javascripts/checkout.js")

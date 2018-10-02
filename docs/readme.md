@@ -89,6 +89,9 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 ### Deployment Workflow
 
 ### Web Host
+[Production/Live](https://chicken-fries.herokuapp.com/)
+
+[Staging](https://chicken-fries-staging.herokuapp.com/)
 
 # Project Milestones
 
