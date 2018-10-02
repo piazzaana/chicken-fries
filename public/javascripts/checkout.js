@@ -1,4 +1,4 @@
-const stripe = Stripe('pk_test_rmALB2lGQQER0zyeD1O6wsAu');
+const stripe = Stripe('pk_test_CLZ4lDLNcpuzMOo9DPXBEBD8');
 const elements = stripe.elements();
 let $form = $('#checkout-form');
 

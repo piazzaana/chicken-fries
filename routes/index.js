@@ -12,34 +12,17 @@ router.get('/', (req, res, next) => {
     res.render('index', { title: 'Welcome to Chicken & Fries' });
 });
 
-router.get('/order', (req, res, next) => {
-    res.render('order', {title: 'Order Page'});
-});
-
 // get about page
 router.get('/about', (req, res, next) => {
     res.render('about', {title: 'About us page'});
-});
-
-router.get('/order', (req, res, next) => {
-    res.render('order', {title: 'Order Page'});
 });
 
 router.get('/contact', (req, res, next) => {
     res.render('contact', {title: 'Contact Us'});
 });
 
-router.get('/about', (req, res, next) => {
-    res.render('about', {title: 'About Us'});
-});
-
 router.get('/location', (req, res, next) => {
     res.render('location', {title: 'Our Location'});
-});
-
-router.get('/login', (req, res, next) => {
-    res.render('login', {title: 'Login Page'});
-
 });
 
 //get breakfast menu page
@@ -126,7 +109,7 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
         return res.redirect('/shopping-cart');
     }
     let cart = new Cart(req.session.cart);
-    let stripe = require("stripe")("sk_test_Nm4ul2p0g79wCgLhUB5xBZoD");
+    let stripe = require("stripe")(process.env.SECRET_KEY);
 
     stripe.charges.create({
         amount: cart.totalPrice * 100,
