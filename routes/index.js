@@ -32,6 +32,11 @@ router.get('/breakfast', (req, res, next) => {
     });
 });
 
+//create route to get the favorites list
+router.get('/favorites', isLoggedIn, (req,res,next)=>{
+    res.render('favorites', {title: 'Favorites'});
+});
+
 router.get('/add-to-cart/breakfast/:id', (req, res, next) => {
     const breakfastItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
