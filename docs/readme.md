@@ -31,7 +31,7 @@
     * [Public release](https://github.com/piazzaana/chicken-fries/blob/develop/docs/readme.md#public-release)
 
 # Brief
-On this brief I will go through the audience, the problem, the solution, my unique value proposition, and pitch. I'll identify the audience and the problem, will come up with a solution using my unique value proposition, and will deliver a pitch.
+The Chicken & Fries customers currently does not have a online ordering system in place. This food ordering app seeks to lower the waiting in line time for their customers by providing a way for the customers to order their food online and have and approximate 'ready' time so they can skip the line.
 
 ## Audience
 The audience for this particular fast food restaurant would be adults between the ages of 18 – 50 years old, who work all day and don’t have much time to cook, they would not spend more than $50 on a meal and, for most part they would be single or live with a partner, not necessarily married, and have no children. 
@@ -40,13 +40,13 @@ The audience for this particular fast food restaurant would be adults between th
 The problem that this audience have is time. They have a busy lifestyle, not much time to cook or to be hanging on the phone ordering food. They want good, affordable, and fast food.
 
 ## Solution
-The solution will be a online food ordering system.
+To build an application where the customer can view the available menus and order their food and pay for it online so they can skip the waiting in line time and come back when their food is ready so they can just pick it up and go,
 
 ## Unique Value Proposition
 Build a web application that can handle order and payment online and give the customer a approximate 'ready time', so the customer knows when the food will be ready and can take care of their busy lives while they wait for the food.
 
 ## Pitch
-We know you are hungry! We'll take care of the food for you.
+[Pitch Video](https://www.youtube.com/watch?v=ymOAJD-CXl0&feature=youtu.be)
 
 # Spec
 
@@ -68,8 +68,25 @@ Filter GitHub Issues: [Features](https://github.com/piazzaana/chicken-fries/issu
 ## Interface
 
 ### Information Architecture
+* Home - Banner with business slogan
+* Our Menus - Links to menus
+* Breakfast - Breakfast menu
+* Lunch - Lunch menu
+* Dinner - Dinner menu
+* About - Images of the restaurant and staff along with information about the images
+* Contact - Contact form
+* Location - A map with the address of the restaurant and the phone number
+* Shopping Cart - A list of items added to the cart
+* Action - Links to remove one item or remove all items
+* Checkout - A payment form
+* Sign in (tab) - Links to either sign in or sign up
+* Sign in - A sign in form
+* Sign up - A sign up form
+* Profile - A order history from the customer
+* Logout - Will redirect the user to the home page
 
 ### Browser Support
+* macOS (High Sierra) Chrome (Version 69.0.3497.100 +)
 
 ## Infrastructure
 Subject | Technology
@@ -85,8 +102,11 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 * MongoDB
 
 ### Integrations
+* Stripe
 
 ### Deployment Workflow
+New features are introduced to the develop branch, once a push is made on the develop branch, it is automatically deployed to the [staging server](https://chicken-fries-staging.herokuapp.com/).
+Once approved, these changes will be pushed into the master branch, which is also automatically deployed to the [live server](https://chicken-fries.herokuapp.com/).
 
 ### Web Host
 [Production/Live](https://chicken-fries.herokuapp.com/)
@@ -108,10 +128,10 @@ Version Control | Git ([GitHub](https://github.com/piazzaana/chicken-fries))
 [Pivot]()
 
 ## Alpha Release
-[Alpha Release]()
+Due - October 6th
 
 ## Beta Release
-Due - September 15th
+Due - October 13th
 
 ## Public Release
-Due - September 20th
+Due - October 18th

@@ -1,4 +1,4 @@
-const stripe = Stripe('pk_test_rmALB2lGQQER0zyeD1O6wsAu');
+const stripe = Stripe('pk_test_CLZ4lDLNcpuzMOo9DPXBEBD8');
 const elements = stripe.elements();
 let $form = $('#checkout-form');
 
@@ -30,14 +30,14 @@ let card = elements.create('card', {
 card.mount('#card-element');
 
 var inputs = document.querySelectorAll('input.field');
-Array.prototype.forEach.call(inputs, function(input) {
+Array.prototype.forEach.call(inputs, (input) => {
     input.addEventListener('focus', function() {
         input.classList.add('is-focused');
     });
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', () => {
         input.classList.remove('is-focused');
     });
-    input.addEventListener('keyup', function() {
+    input.addEventListener('keyup', () => {
         if (input.value.length === 0) {
             input.classList.add('is-empty');
         } else {
@@ -67,7 +67,7 @@ function setOutcome(result) {
 card.on('change', function(event) {
     setOutcome(event);
 });
-$form.submit(function(e) {
+$form.submit((e) => {
     e.preventDefault();
     let form = document.querySelector('form');
     let details = {
