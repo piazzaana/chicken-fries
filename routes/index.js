@@ -27,34 +27,33 @@ router.get('/location', (req, res, next) => {
 
 //get breakfast menu page
 router.get('/breakfast', (req, res, next) => {
-    Breakfast.find(function (err, docs) {
+    Breakfast.find((err, docs) => {
         res.render('menus/breakfast', {title: 'Breakfast Menu', breakfast: docs});
     });
 });
 
 router.get('/add-to-cart/breakfast/:id', (req, res, next) => {
-    let bfItemId = req.params.id;
+    const breakfastItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Breakfast.findById(bfItemId, function (err, bfItem) {
+    Breakfast.findById(breakfastItemId, (err, breakfastItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
-        cart.add(bfItem, bfItem.id);
+        cart.add(breakfastItem, breakfastItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/breakfast');
     });
 });
 
 //get lunch page
 router.get('/lunch', (req, res, next) => {
-    Lunch.find(function (err, docs) {
+    Lunch.find((err, docs) => {
         res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
     });
 });
 
 router.get('/add-to-cart/lunch/:id', (req, res, next) => {
-    let lunchItemId = req.params.id;
+    const lunchItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
     Lunch.findById(lunchItemId, (err, lunchItem) => {
         if(err){
@@ -75,7 +74,7 @@ router.get('/dinner', (req, res, next) => {
 });
 
 router.get('/add-to-cart/dinner/:id', (req, res, next) => {
-    let dinnerItemId = req.params.id;
+    const dinnerItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
     Dinner.findById(dinnerItemId, (err, dinnerItem) => {
         if(err){
@@ -134,7 +133,6 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
             res.redirect('/');
         });
     });
-    console.log(req.body);
 });
 
 module.exports = router;
