@@ -60,4 +60,4 @@ We use GitHub for version control (https://github.com)
 See also the list of collaborators (https://github.com/piazzaana/chicken-fries/settings/collaboration) who participated in this project.
 
 ## License
-This project is licensed under the GPLv3 License - see the [LICENSE.md](https://github.com/piazzaana/chicken-fries/blob/develop/docs/LICENSE.md) file for details
+This project is licensed under the GPLv3 License - see the [LICENSE.md](https://github.com/piazzaana/chicken-fries/blob/master/docs/LICENSE.md) file for details
