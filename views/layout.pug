@@ -15,6 +15,7 @@ html(lang='en')
       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
         a.navbar-brand(href="/")
           img.logo(src='images/logo.png')
+        h2(style='color:white') Chicken & Fries
         button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
           span.navbar-toggler-icon
         div.collapse.navbar-collapse(id='navbarSupportedContent')
@@ -39,7 +40,7 @@ html(lang='en')
 
             li.nav-item.dropdown
               a.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-                <i class="fas fa-user"></i> Sign in
+                <i class="fas fa-user"></i> My Account
               div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
                 if login
                   a.dropdown-item(href="/users/profile") Profile

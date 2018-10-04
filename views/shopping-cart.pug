@@ -4,20 +4,18 @@ block content
         div.card-header
             h2 Your shopping cart items
         div.card-body
-            ul
-                if foodItems
+            ul(style='list-style-type:none;')
+                if foodItems.length >= 1
                     each item in foodItems
                         li
                             h6=item.item.name
-                            span.btn.btn-success.disabled="$"+item.price+".00"
+                            span.btn.btn-success="$"+item.price+".00"
                             div.btn-group
-                                button.btn.btn-primary.dropdown-toggle(data-toggle="dropdown") Action
-                                    span.caret
-                                        ul.dropdown-menu
-                                            li.text-center
-                                                a(href="#") reduce by 1
-                                            li.text-center
-                                                a(href="#") remove all
+                                button.btn.btn-primary.dropdown-toggle(id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='margin-left:20px') Edit Order
+                                div.dropdown-menu
+                                    a.dropdown-item(href="/reduce/"+item.item._id) reduce by 1
+                                    a.dropdown-item(href="/remove/"+item.item._id) remove all
+
                             span.badge.badge-dark.float-right=item.qty
 
                             hr
@@ -26,4 +24,4 @@ block content
                             button.btn.btn-success
                                 a(href="/checkout") Checkout
                 else
-                        button.btn.btn-warning.disabled Your cart is empty
+                    h1 Your cart is empty

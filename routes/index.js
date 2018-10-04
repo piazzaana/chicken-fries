@@ -90,6 +90,26 @@ router.get('/add-to-cart/dinner/:id', (req, res, next) => {
     });
 });
 
+//reduce by 1
+router.get('/reduce/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.reduceByOne(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
+});
+
+//reduce by 1
+router.get('/remove/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.removeItem(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
+});
+
 router.get('/shopping-cart', (req, res, next) => {
     if(!req.session.cart){
         return res.render('shopping-cart',{foodItems: null});
