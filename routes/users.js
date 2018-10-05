@@ -35,15 +35,14 @@ router.get('/add-breakfast-to-favorites/:id', isLoggedIn, (req,res,next) => {
             return res.redirect('/', {title: 'Something went wrong.'});
         }
         breakfastItem.favorite = true;
-        console.log(breakfastItem);
         res.render('favorites', {title:'Favorites', favorite: breakfastItem});
     });
 });
 
-//remove from favorites
-router.get('/remove-from-favorites/:id', isLoggedIn, (req,res,next)=>{
-    res.render('favorites', {title:'remove from favorites route'})
-});
+//remove from favorites not yet implemented
+// router.get('/remove-from-favorites/:id', isLoggedIn, (req,res,next)=>{
+//     res.render('favorites', {title:'remove from favorites route'})
+// });
 
 //get logout out route
 router.get('/logout', isLoggedIn, (req, res, next) => {
