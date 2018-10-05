@@ -5,6 +5,7 @@ block content
     h2 My order history
     each order in orders
         div.card(style="margin-bottom:10px")
+            div.card-header
             div.card-body
                 ul.list-group
                     each item in order.cart.items

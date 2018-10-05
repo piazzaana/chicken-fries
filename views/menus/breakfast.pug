@@ -12,12 +12,13 @@ block content
                     h5.card-title=items.name
                     div.icons
                         i.fas.fa-utensils=' - '+items.servingSize
-                        a.fav(href='/favorites/breakfast/' + items._id)
+                        a.fav(href="/users/add-breakfast-to-favorites/" + items._id)
                             i.far.fa-heart
                     div.price-add.clearfix
                         button.disabled.float-left
                             p.card-text.price='$' + items.price + '.00'
                         button.float-right
                             a(href="/add-to-cart/breakfast/" + items._id) Add to cart
-
     script(src='javascripts/favorites.js')
+        //here is the problem, with the js on the icon changes colors the way I want it to, but the route doesn't work
+        //I've only tested on the breakfast route, but the other menus should work exactly the same way.

@@ -3,8 +3,10 @@ const router = express.Router();
 const csrf = require('csurf');
 const passport = require('passport');
 
-let Order = require('../models/order');
-let Cart = require('../models/cart');
+const Order = require('../models/order');
+const Cart = require('../models/cart');
+const Favorite = require('../models/favorite');
+const Breakfast = require('../models/breakfast');
 
 let csrfProtection = csrf();
 router.use(csrfProtection);
@@ -24,7 +26,26 @@ router.get('/profile', isLoggedIn, (req, res, next) => {
     });
 });
 
-//get loug out route
+//get add favorites route
+router.get('/add-breakfast-to-favorites/:id', isLoggedIn, (req,res,next) => {
+    //I am just outputting something to test the route, if the js is disabled the route works.
+    const breakfastItemId = req.params.id;
+    Breakfast.findById(breakfastItemId, (err, breakfastItem) => {
+        if(err){
+            return res.redirect('/', {title: 'Something went wrong.'});
+        }
+        breakfastItem.favorite = true;
+        console.log(breakfastItem);
+        res.render('favorites', {title:'Favorites', favorite: breakfastItem});
+    });
+});
+
+//remove from favorites
+router.get('/remove-from-favorites/:id', isLoggedIn, (req,res,next)=>{
+    res.render('favorites', {title:'remove from favorites route'})
+});
+
+//get logout out route
 router.get('/logout', isLoggedIn, (req, res, next) => {
     req.logout();
     res.redirect('/');
