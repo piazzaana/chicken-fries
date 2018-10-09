@@ -12,66 +12,48 @@ router.get('/', (req, res, next) => {
     res.render('index', { title: 'Welcome to Chicken & Fries' });
 });
 
-router.get('/order', (req, res, next) => {
-    res.render('order', {title: 'Order Page'});
-});
-
 // get about page
 router.get('/about', (req, res, next) => {
     res.render('about', {title: 'About us page'});
-});
-
-router.get('/order', (req, res, next) => {
-    res.render('order', {title: 'Order Page'});
 });
 
 router.get('/contact', (req, res, next) => {
     res.render('contact', {title: 'Contact Us'});
 });
 
-router.get('/about', (req, res, next) => {
-    res.render('about', {title: 'About Us'});
-});
-
 router.get('/location', (req, res, next) => {
     res.render('location', {title: 'Our Location'});
 });
 
-router.get('/login', (req, res, next) => {
-    res.render('login', {title: 'Login Page'});
-
-});
-
 //get breakfast menu page
 router.get('/breakfast', (req, res, next) => {
-    Breakfast.find(function (err, docs) {
+    Breakfast.find((err, docs) => {
         res.render('menus/breakfast', {title: 'Breakfast Menu', breakfast: docs});
     });
 });
 
 router.get('/add-to-cart/breakfast/:id', (req, res, next) => {
-    let bfItemId = req.params.id;
+    const breakfastItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    Breakfast.findById(bfItemId, function (err, bfItem) {
+    Breakfast.findById(breakfastItemId, (err, breakfastItem) => {
         if(err){
             return res.redirect('/', {title: 'Something went wrong.'});
         }
-        cart.add(bfItem, bfItem.id);
+        cart.add(breakfastItem, breakfastItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/breakfast');
     });
 });
 
 //get lunch page
 router.get('/lunch', (req, res, next) => {
-    Lunch.find(function (err, docs) {
+    Lunch.find((err, docs) => {
         res.render('menus/lunch', {title:'Lunch Menu', lunch: docs});
     });
 });
 
 router.get('/add-to-cart/lunch/:id', (req, res, next) => {
-    let lunchItemId = req.params.id;
+    const lunchItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
     Lunch.findById(lunchItemId, (err, lunchItem) => {
         if(err){
@@ -79,7 +61,6 @@ router.get('/add-to-cart/lunch/:id', (req, res, next) => {
         }
         cart.add(lunchItem, lunchItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/lunch');
     });
 });
@@ -92,7 +73,7 @@ router.get('/dinner', (req, res, next) => {
 });
 
 router.get('/add-to-cart/dinner/:id', (req, res, next) => {
-    let dinnerItemId = req.params.id;
+    const dinnerItemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
     Dinner.findById(dinnerItemId, (err, dinnerItem) => {
         if(err){
@@ -100,9 +81,28 @@ router.get('/add-to-cart/dinner/:id', (req, res, next) => {
         }
         cart.add(dinnerItem, dinnerItem.id);
         req.session.cart = cart;
-        console.log(req.session.cart);
         res.redirect('/dinner');
     });
+});
+
+//reduce by 1
+router.get('/reduce/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.reduceByOne(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
+});
+
+//reduce by 1
+router.get('/remove/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.removeItem(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
 });
 
 router.get('/shopping-cart', (req, res, next) => {
@@ -126,9 +126,10 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
         return res.redirect('/shopping-cart');
     }
     let cart = new Cart(req.session.cart);
-    let stripe = require("stripe")("sk_test_Nm4ul2p0g79wCgLhUB5xBZoD");
+    let stripe = require("stripe")(process.env.SECRET_KEY);
 
     stripe.charges.create({
+        //100 is the number of cents on a dollar
         amount: cart.totalPrice * 100,
         currency: "usd",
         source: req.body.stripeToken[1], // obtained with Stripe.js
@@ -151,7 +152,6 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
             res.redirect('/');
         });
     });
-    console.log(req.body);
 });
 
 module.exports = router;

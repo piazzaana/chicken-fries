@@ -6,7 +6,7 @@ let schema = new Schema({
     name:{type:String, required:true},
     readyTime:{type:Number, required:true},
     servingSize:{type:Number,required:true},
-    favorite:{type:Boolean, required:true},
+    // favorite:{type:Boolean, required:true},
     price:{type:Number, required:true},
 });
 
