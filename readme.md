@@ -31,7 +31,22 @@ npm install
 ```
 This command will install all the dependencies needed for your project to run.
 
-To seed you database run the breakfast-seeder.js, lunch-seeder.js, dinner-seeder.js files individually (one at the time)
+To seed you database go to the seed directory 
+```
+cd seed
+``` 
+Run the breakfast-seeder.js 
+```
+node breakfast-seeder.js
+```
+Run the lunch-seeder.js 
+```
+node lunch-seeder.js
+```
+Run the dinner-seeder.js 
+```
+node dinner-seeder.js
+``` 
 
 After your database is seeded run the following command
 
