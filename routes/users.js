@@ -11,7 +11,7 @@ const Breakfast = require('../models/breakfast');
 let csrfProtection = csrf();
 router.use(csrfProtection);
 
-//get user profile page
+//get user profile page order history
 router.get('/profile', isLoggedIn, (req, res, next) => {
     Order.find({user: req.user}, (err, orders) => {
         if(err){
@@ -26,23 +26,51 @@ router.get('/profile', isLoggedIn, (req, res, next) => {
     });
 });
 
-//get add favorites route
+//favorites to the favorites list
 router.get('/add-breakfast-to-favorites/:id', isLoggedIn, (req,res,next) => {
-    //I am just outputting something to test the route, if the js is disabled the route works.
     const breakfastItemId = req.params.id;
     Breakfast.findById(breakfastItemId, (err, breakfastItem) => {
-        if(err){
-            return res.redirect('/', {title: 'Something went wrong.'});
+        if (err){
+            console.log('ERROR FINDING ITEM', err);
         }
-        breakfastItem.favorite = true;
-        res.render('favorites', {title:'Favorites', favorite: breakfastItem});
+        let fav = new Favorite({
+            user: req.user,
+            imagePath: breakfastItem.imagePath,
+            name: breakfastItem.name,
+            price: breakfastItem.price
+        });
+        fav.save((err, savedItem)=>{
+            if(err){
+                console.log('ERROR SAVING', err);
+            }
+            console.log("SAVED ITEM ", savedItem);
+        });
+        return res.redirect('/users/favorites');
     });
 });
 
-//remove from favorites not yet implemented
-// router.get('/remove-from-favorites/:id', isLoggedIn, (req,res,next)=>{
-//     res.render('favorites', {title:'remove from favorites route'})
-// });
+//remove from favorites
+router.get('/remove-breakfast-from-favorites/:id', isLoggedIn, (req,res,next) => {
+    const favId = req.params.id;
+    console.log("Fav ID TO BE REMOVED ",favId);
+    Favorite.findOneAndRemove({ _id: favId }, (err, result)=>{
+        if (err){
+            console.log('ERROR ', err);
+        }
+        res.redirect('/users/favorites');
+    });
+});
+
+//get a list of favorites
+router.get('/favorites', isLoggedIn, (req,res,next)=>{
+    Favorite.find({user: req.user}, (err, favorites)=>{
+        if (err){
+            console.log("ERROR RETRIEVING FAVORITES ", err);
+        }
+        console.log('NUMBER OF FAVORITES', favorites.length);
+        res.render('user/favorites', {title:'my favorites', favorites: favorites});
+    });
+});
 
 //get logout out route
 router.get('/logout', isLoggedIn, (req, res, next) => {

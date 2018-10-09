@@ -5,7 +5,7 @@ block content
             h2 Your shopping cart items
         div.card-body
             ul(style='list-style-type:none;')
-                if foodItems.length >= 1
+                if foodItems
                     each item in foodItems
                         li
                             h6=item.item.name
