@@ -1,16 +1,15 @@
 extends ../layout
 
 block content
-    h1=title
+    h1(style="margin-bottom:50px")=title
     h2=message
     ul
         each item in favorites
-            div.card
+            div.card(style="margin-bottom:20px;")
                 div.card-header
-                    h4=item._id
                 div.card-body
                     img(src=item.imagePath)
                     h4.card-text=item.name
                 div.card-footer
-                    h3="$"+item.price+".00"
-                    a(href='/users/remove-breakfast-from-favorites/'+item._id) Remove from favorites
+                    h3(style="text-align:right;")="$"+item.price+".00"
+                    a(style="color:white;float:right")(href='/users/remove-from-favorites/'+item._id) Remove from favorites

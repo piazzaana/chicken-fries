@@ -10,7 +10,7 @@ block content
                     h5.card-title=items.name
                     div.icons
                         i.fas.fa-utensils=' - '+items.servingSize
-                        a.fav(href='#')
+                        a.fav(href='/users/add-dinner-to-favorites/' + items._id)
                             i.far.fa-heart
                     div.price-add.clearfix
                         button.disabled.float-left

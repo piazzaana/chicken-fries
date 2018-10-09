@@ -7,6 +7,8 @@ const Order = require('../models/order');
 const Cart = require('../models/cart');
 const Favorite = require('../models/favorite');
 const Breakfast = require('../models/breakfast');
+const Lunch = require('../models/lunch');
+const Dinner = require('../models/dinner');
 
 let csrfProtection = csrf();
 router.use(csrfProtection);
@@ -26,7 +28,7 @@ router.get('/profile', isLoggedIn, (req, res, next) => {
     });
 });
 
-//favorites to the favorites list
+//add breakfast items to the favorites list
 router.get('/add-breakfast-to-favorites/:id', isLoggedIn, (req,res,next) => {
     const breakfastItemId = req.params.id;
     Breakfast.findById(breakfastItemId, (err, breakfastItem) => {
@@ -43,16 +45,58 @@ router.get('/add-breakfast-to-favorites/:id', isLoggedIn, (req,res,next) => {
             if(err){
                 console.log('ERROR SAVING', err);
             }
-            console.log("SAVED ITEM ", savedItem);
+        });
+        return res.redirect('/users/favorites');
+    });
+});
+
+//add lunch items to the favorites list
+router.get('/add-lunch-to-favorites/:id', isLoggedIn, (req,res,next) => {
+    const lunchItemId = req.params.id;
+    Lunch.findById(lunchItemId, (err, lunchItem) => {
+        if (err){
+            console.log('ERROR FINDING ITEM', err);
+        }
+        let fav = new Favorite({
+            user: req.user,
+            imagePath: lunchItem.imagePath,
+            name: lunchItem.name,
+            price: lunchItem.price
+        });
+        fav.save((err, savedItem)=>{
+            if(err){
+                console.log('ERROR SAVING', err);
+            }
+        });
+        return res.redirect('/users/favorites');
+    });
+});
+
+//add dinner items to the favorites list
+router.get('/add-dinner-to-favorites/:id', isLoggedIn, (req,res,next) => {
+    const dinnerItemId = req.params.id;
+    Dinner.findById(dinnerItemId, (err, dinnerItem) => {
+        if (err){
+            console.log('ERROR FINDING ITEM', err);
+        }
+        let fav = new Favorite({
+            user: req.user,
+            imagePath: dinnerItem.imagePath,
+            name: dinnerItem.name,
+            price: dinnerItem.price
+        });
+        fav.save((err, savedItem)=>{
+            if(err){
+                console.log('ERROR SAVING', err);
+            }
         });
         return res.redirect('/users/favorites');
     });
 });
 
 //remove from favorites
-router.get('/remove-breakfast-from-favorites/:id', isLoggedIn, (req,res,next) => {
+router.get('/remove-from-favorites/:id', isLoggedIn, (req,res,next) => {
     const favId = req.params.id;
-    console.log("Fav ID TO BE REMOVED ",favId);
     Favorite.findOneAndRemove({ _id: favId }, (err, result)=>{
         if (err){
             console.log('ERROR ', err);
@@ -68,7 +112,7 @@ router.get('/favorites', isLoggedIn, (req,res,next)=>{
             console.log("ERROR RETRIEVING FAVORITES ", err);
         }
         console.log('NUMBER OF FAVORITES', favorites.length);
-        res.render('user/favorites', {title:'my favorites', favorites: favorites});
+        res.render('user/favorites', {title:'My Favorites', favorites: favorites});
     });
 });
 
