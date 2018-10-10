@@ -5,10 +5,10 @@ block content
     h2=message
     ul
         each item in favorites
-            div.card(style="margin-bottom:20px;")
+            div.card.menu
                 div.card-header
                 div.card-body
-                    img(src=item.imagePath)
+                    img.card-img-top(src='../'+item.imagePath)
                     h4.card-text=item.name
                 div.card-footer
                     h3(style="text-align:right;")="$"+item.price+".00"

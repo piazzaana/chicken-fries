@@ -12,7 +12,10 @@ html(lang='en')
     header
       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
         a.navbar-brand(href="/")
-          img.logo(src='images/logo.png')
+          if login
+            img.logo(src='../images/logo.png')
+          if !login
+            img.logo(src='images/logo.png')
         h2(style='color:white') Chicken & Fries
         button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
           span.navbar-toggler-icon
