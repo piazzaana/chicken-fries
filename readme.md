@@ -21,9 +21,14 @@ Place the files in an easy to access folder on your machine
 ```
 Desktop
 ```
-Open the sample.env file and rename it to .env
-Replace the ```<your username>``` and ```<your password>``` with your credentials
-
+To run this app locally you will need to make a few changes in order for this to work.
+On the ```app.js``` file on line 14 change the content inside the ```mongoose.connect('')``` to
+```
+mongodb://'+process.env.DB_HOST+':27017/'+DB_NAME
+```
+Do the same for the ```mongoose.connect('')``` on the following files ```seed/breakfast-seeder.js```,
+```seed/lunch-seeder.js```, and
+```seed/dinner-seeder.js```
 
 Open your terminal window, point it to the folder you just downloaded and run the following command
 ```
