@@ -21,9 +21,14 @@ Place the files in an easy to access folder on your machine
 ```
 Desktop
 ```
-Open the sample.env file and rename it to .env
-Replace the ```<your username>``` and ```<your password>``` with your credentials
-
+To run this app locally you will need to make a few changes in order for this to work.
+On the ```app.js``` file on line 14 change the content inside the ```mongoose.connect('')``` to
+```
+mongodb://'+process.env.DB_HOST+':27017/'+DB_NAME
+```
+Do the same for the ```mongoose.connect('')``` on the following files ```seed/breakfast-seeder.js```,
+```seed/lunch-seeder.js```, and
+```seed/dinner-seeder.js```
 
 Open your terminal window, point it to the folder you just downloaded and run the following command
 ```
@@ -31,7 +36,22 @@ npm install
 ```
 This command will install all the dependencies needed for your project to run.
 
-To seed you database run the breakfast-seeder.js, lunch-seeder.js, dinner-seeder.js files individually (one at the time)
+To seed you database go to the seed directory 
+```
+cd seed
+``` 
+Run the breakfast-seeder.js 
+```
+node breakfast-seeder.js
+```
+Run the lunch-seeder.js 
+```
+node lunch-seeder.js
+```
+Run the dinner-seeder.js 
+```
+node dinner-seeder.js
+``` 
 
 After your database is seeded run the following command
 
