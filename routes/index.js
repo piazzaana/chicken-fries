@@ -85,6 +85,26 @@ router.get('/add-to-cart/dinner/:id', (req, res, next) => {
     });
 });
 
+//reduce by 1
+router.get('/reduce/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.reduceByOne(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
+});
+
+//remove
+router.get('/remove/:id', (req,res,next)=>{
+    let itemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.removeItem(itemId);
+    req.session.cart = cart;
+    res.redirect('/shopping-cart');
+});
+
 router.get('/shopping-cart', (req, res, next) => {
     if(!req.session.cart){
         return res.render('shopping-cart',{foodItems: null});
@@ -109,16 +129,15 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
     let stripe = require("stripe")(process.env.SECRET_KEY);
 
     stripe.charges.create({
+        //100 is the number of cents on a dollar
         amount: cart.totalPrice * 100,
         currency: "usd",
         source: req.body.stripeToken[1], // obtained with Stripe.js
         description: "Test charge",
     }, (err, charge) => {
-        console.log("inside the create charges function");
         if (err){
             console.log(err);
         }
-        console.log('CHARGE ', charge);
         let order = new Order({
             user: req.user,
             cart: cart,
