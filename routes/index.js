@@ -95,7 +95,7 @@ router.get('/reduce/:id', (req,res,next)=>{
     res.redirect('/shopping-cart');
 });
 
-//reduce by 1
+//remove
 router.get('/remove/:id', (req,res,next)=>{
     let itemId = req.params.id;
     let cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -135,11 +135,9 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
         source: req.body.stripeToken[1], // obtained with Stripe.js
         description: "Test charge",
     }, (err, charge) => {
-        console.log("inside the create charges function");
         if (err){
             console.log(err);
         }
-        console.log('CHARGE ', charge);
         let order = new Order({
             user: req.user,
             cart: cart,

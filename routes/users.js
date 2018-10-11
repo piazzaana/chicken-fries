@@ -10,8 +10,8 @@ const Breakfast = require('../models/breakfast');
 const Lunch = require('../models/lunch');
 const Dinner = require('../models/dinner');
 
-let csrfProtection = csrf();
-router.use(csrfProtection);
+const routeProtection = csrf();
+router.use(routeProtection);
 
 //get user profile page order history
 router.get('/profile', isLoggedIn, (req, res, next) => {
@@ -111,7 +111,6 @@ router.get('/favorites', isLoggedIn, (req,res,next)=>{
         if (err){
             console.log("ERROR RETRIEVING FAVORITES ", err);
         }
-        console.log('NUMBER OF FAVORITES', favorites.length);
         res.render('user/favorites', {title:'My Favorites', favorites: favorites});
     });
 });
