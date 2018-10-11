@@ -1,12 +1,10 @@
 doctype html
 html(lang='en')
   head
-    <!-- Required meta tags -->
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
-    <!-- Bootstrap CSS -->
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
@@ -14,7 +12,11 @@ html(lang='en')
     header
       nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
         a.navbar-brand(href="/")
-          img.logo(src='images/logo.png')
+          if login
+            img.logo(src='../images/logo.png')
+          if !login
+            img.logo(src='images/logo.png')
+        h2(style='color:white') Chicken & Fries
         button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
           span.navbar-toggler-icon
         div.collapse.navbar-collapse(id='navbarSupportedContent')
@@ -33,24 +35,22 @@ html(lang='en')
               a.nav-link(href="/location") Location
             li.nav-item
               a.nav-link(href="/shopping-cart")
-                <i class="fas fa-shopping-cart"></i> Shopping cart
+                i.fas.fa-shopping-cart Shopping cart
                 if session.cart
                   span.badge.badge-dark(style='margin-left:5px')=session.cart.totalQty
-
             li.nav-item.dropdown
               a.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-                <i class="fas fa-user"></i> Sign in
+                i.fas.fa-user My Account
               div.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
                 if login
-                  a.dropdown-item(href="/users/profile") Profile
-
+                  a.dropdown-item(href="/users/profile") Order History
+                  a.dropdown-item(href="/users/favorites") Favorites
                   a.dropdown-item(href="/users/logout") Logout
                 else
                   a.dropdown-item(href="/users/signup") Sign up
-
                   a.dropdown-item(href="/users/signin") Sign in
     main
-    block content
+      block content
 
     footer Ana Cristina Piazza - WAI - Full Sail University
 
