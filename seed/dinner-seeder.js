@@ -1,7 +1,13 @@
 const Dinner = require('../models/dinner');
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_HOST+'://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@ds163402.mlab.com:63402/chicken-fries',{ useNewUrlParser:true});
+process.env.NODE_ENV === 'production' ? (
+    //set up database for live connection
+    mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true})
+  ) : (
+    //set up database for local connection
+    mongoose.connect('mongodb://localhost:27017/'+process.env.DB_NAME,{ useNewUrlParser:true})
+  )
 
 let DinnerItems = [
     new Dinner({
@@ -89,7 +95,7 @@ let DinnerItems = [
 let done = 0;
 
 for(let i = 0; i < DinnerItems.length; i++){
-    DinnerItems[i].save(function (err, result) {
+    DinnerItems[i].save((err, result) => {
         done++;
         if(done === DinnerItems.length){
             exit();

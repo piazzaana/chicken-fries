@@ -21,9 +21,7 @@ Place the files in an easy to access folder on your machine
 ```
 Desktop
 ```
-Open the sample.env file and rename it to .env
-Replace the ```<your username>``` and ```<your password>``` with your credentials
-
+Rename the ```sample.env``` to ```.env```
 
 Open your terminal window, point it to the folder you just downloaded and run the following command
 ```
@@ -31,12 +29,27 @@ npm install
 ```
 This command will install all the dependencies needed for your project to run.
 
-To seed you database run the breakfast-seeder.js, lunch-seeder.js, dinner-seeder.js files individually (one at the time)
+To seed you database go to the seed directory 
+```
+cd seed
+``` 
+Run the breakfast-seeder.js 
+```
+node breakfast-seeder.js
+```
+Run the lunch-seeder.js 
+```
+node lunch-seeder.js
+```
+Run the dinner-seeder.js 
+```
+node dinner-seeder.js
+``` 
 
 After your database is seeded run the following command
 
 ```
-nodemon bin/www
+node bin/www
 ```
 
 Open your favorite browser and go to
@@ -60,4 +73,4 @@ We use GitHub for version control (https://github.com)
 See also the list of collaborators (https://github.com/piazzaana/chicken-fries/settings/collaboration) who participated in this project.
 
 ## License
-This project is licensed under the GPLv3 License - see the [LICENSE.md](https://github.com/piazzaana/chicken-fries/blob/develop/docs/LICENSE.md) file for details
+This project is licensed under the GPLv3 License - see the [LICENSE.md](https://github.com/piazzaana/chicken-fries/blob/master/docs/LICENSE.md) file for details
