@@ -49,7 +49,7 @@ node dinner-seeder.js
 After your database is seeded run the following command
 
 ```
-nodemon bin/www
+node bin/www
 ```
 
 Open your favorite browser and go to
