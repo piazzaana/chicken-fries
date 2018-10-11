@@ -10,8 +10,14 @@ const flash = require('connect-flash');
 const validator = require('express-validator');
 const MongoStore = require('connect-mongo')(session);
 
-//set up database connection
-mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true});
+process.env.NODE_ENV === 'production' ? (
+  //set up database for live connection
+  mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true})
+) : (
+  //set up database for local connection
+  mongoose.connect('mongodb://'+ process.env.DB_HOST +':27017/'+ process.env.DB_NAME,{ useNewUrlParser:true})
+)
+
 require('./config/passport');
 
 let db = mongoose.connection;

@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt');
 let UserSchema = new Schema({
     email:{type:String, required: true},
     password:{type:String, required: true},
+    //array of favorite ids
+    //favorites:[{type: Schema.Types.ObjectId, ref:'Favorite'}]
 });
 
 UserSchema.methods.encryptPassword = function(password){

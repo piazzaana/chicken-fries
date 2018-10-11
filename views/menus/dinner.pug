@@ -10,12 +10,12 @@ block content
                     h5.card-title=items.name
                     div.icons
                         i.fas.fa-utensils=' - '+items.servingSize
-                        i.far.fa-heart
+                        a.fav(href='/users/add-dinner-to-favorites/' + items._id)
+                            i.far.fa-heart
                     div.price-add.clearfix
                         button.disabled.float-left
                             p.card-text.price='$' + items.price + '.00'
                         button.float-right
                             a(href="/add-to-cart/dinner/" + items._id) Add to cart
-        div.redirect
-            a(href='/order') Chose another menu
+
     script(src='javascripts/favorites.js')

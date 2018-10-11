@@ -1,8 +1,14 @@
 const Breakfast = require('../models/breakfast');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true});
-
+process.env.NODE_ENV === 'production' ? (
+    //set up database for live connection
+    mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true})
+  ) : (
+    //set up database for local connection
+    mongoose.connect('mongodb://localhost:27017/'+process.env.DB_NAME,{ useNewUrlParser:true})
+  )
+  
 let breakfastMenu = [
     new Breakfast({
         imagePath: 'images/breakfast/item-1.jpg',
