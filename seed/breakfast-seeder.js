@@ -1,4 +1,3 @@
-require('dotenv').config();
 const Breakfast = require('../models/breakfast');
 const mongoose = require('mongoose');
 
@@ -9,7 +8,7 @@ process.env.NODE_ENV === 'production' ? (
     //set up database for local connection
     mongoose.connect('mongodb://localhost:27017/'+process.env.DB_NAME,{ useNewUrlParser:true})
   )
-
+  
 let breakfastMenu = [
     new Breakfast({
         imagePath: 'images/breakfast/item-1.jpg',
