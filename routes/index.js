@@ -127,6 +127,7 @@ router.post('/checkout', isLoggedIn, (req, res, next) => {
     }
     let cart = new Cart(req.session.cart);
     let stripe = require("stripe")(process.env.SECRET_KEY);
+    console.log(process.env.SECRET_KEY);
 
     stripe.charges.create({
         //100 is the number of cents on a dollar
