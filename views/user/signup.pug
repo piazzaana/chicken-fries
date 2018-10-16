@@ -5,6 +5,9 @@ block content
         div.alert.alert-danger=messages
     div.card
         div.card-header
+            ul
+                li email must be a valid ( name@provider.com )
+                li password must be at least 4 digits long
             h3 Create you account
         div.card-body
             form(method='post' action='/users/signup')
