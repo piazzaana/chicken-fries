@@ -21,6 +21,10 @@ router.get('/contact', (req, res, next) => {
     res.render('contact', {title: 'Contact Us'});
 });
 
+router.post('/contact', (req,res,next)=>{
+    res.render('thank-you', {title: 'Your message has been received. Thank You!'})
+});
+
 router.get('/location', (req, res, next) => {
     res.render('location', {title: 'Our Location'});
 });
