@@ -15,7 +15,7 @@ process.env.NODE_ENV === 'production' ? (
   mongoose.connect('mongodb://'+ process.env.DB_USER +':'+ process.env.DB_PASS +'@'+ process.env.DB_HOST +':63402/'+ process.env.DB_NAME,{ useNewUrlParser:true})
 ) : (
   //set up database for local connection
-  mongoose.connect('mongodb://localhost:27017/'+ process.env.DB_NAME,{ useNewUrlParser:true})
+  mongoose.connect('mongodb://localhost:27017/'+process.env.DB_NAME,{ useNewUrlParser:true})
 )
 
 require('./config/passport');
